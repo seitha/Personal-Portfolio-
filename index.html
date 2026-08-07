@@ -452,7 +452,239 @@ footer {
 <div class="lightbox" id="lightbox">
     <img src="" id="lightbox-img">
 </div>
+<section class="tabbed-gallery">
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="tab1">Residential</button>
+    <button class="tab-btn" data-tab="tab2">Commercial</button>
+    <button class="tab-btn" data-tab="tab3">Industrial</button>
+    <button class="tab-btn" data-tab="tab4">Projects</button>
+  </div>
 
+  <!-- Gallery Content -->
+  <div class="tab-content active" id="tab1">
+    <div class="gallery">
+      <img src="https://picsum.photos/300?1" alt="">
+      <img src="https://picsum.photos/300?2" alt="">
+      <img src="https://picsum.photos/300?3" alt="">
+      <img src="https://picsum.photos/300?4" alt="">
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab2">
+    <div class="gallery">
+      <img src="https://picsum.photos/300?5" alt="">
+      <img src="https://picsum.photos/300?6" alt="">
+      <img src="https://picsum.photos/300?7" alt="">
+      <img src="https://picsum.photos/300?8" alt="">
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab3">
+    <div class="gallery">
+      <img src="https://picsum.photos/300?9" alt="">
+      <img src="https://picsum.photos/300?10" alt="">
+      <img src="https://picsum.photos/300?11" alt="">
+      <img src="https://picsum.photos/300?12" alt="">
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab4">
+    <div class="gallery">
+      <img src="https://picsum.photos/300?13" alt="">
+      <img src="https://picsum.photos/300?14" alt="">
+      <img src="https://picsum.photos/300?15" alt="">
+      <img src="https://picsum.photos/300?16" alt="">
+    </div>
+  </div>
+</section>
+
+<style>
+.tabbed-gallery {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  margin: 5px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.tab-btn.active {
+  background: #ffcc00;
+  color: #000;
+}
+
+.tab-btn:hover {
+  background: #ffd633;
+}
+
+/* Content */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+const tabs = document.querySelectorAll(".tab-btn");
+const contents = document.querySelectorAll(".tab-content");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    // remove active
+    tabs.forEach(t => t.classList.remove("active"));
+    contents.forEach(c => c.classList.remove("active"));
+
+    // add active
+    tab.classList.add("active");
+    document.getElementById(tab.dataset.tab).classList.add("active");
+  });
+});
+        </script>
+
+    <section class="why-choose-us">
+  <div class="container">
+    <h2>Why Choose Us</h2>
+    <p class="subtitle">Reliable, professional, and built for your safety</p>
+
+    <div class="reasons">
+      
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Certified Experts</h3>
+        <p>Our electricians are trained and certified to handle all types of electrical work safely and efficiently.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>Quality Workmanship</h3>
+        <p>We deliver high-quality installations and repairs that meet industry standards.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⏱️</div>
+        <h3>Fast Response</h3>
+        <p>We respond quickly to your needs and complete projects on time without delays.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💡</div>
+        <h3>Affordable Pricing</h3>
+        <p>Transparent pricing with no hidden costs, giving you the best value for your money.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔒</div>
+        <h3>Safety First</h3>
+        <p>We prioritize safety in every job to protect your home, business, and loved ones.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Trusted Service</h3>
+        <p>We build long-term relationships through honesty, reliability, and excellent customer service.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.why-choose-us {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Grid */
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Icon */
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #ffcc00; /* Yellow brand color */
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #555;
+  font-size: 14px;
+}
+</style>
 <!-- CONTACT -->
 <section class="contact">
     <h2>Contact Us</h2>
