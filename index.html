@@ -6,718 +6,326 @@
 <title>Edkal Electrical Services</title>
 
 <style>
-:root {
-    --yellow: #f4b400;
-    --dark: #111;
-    --light: #fff;
-    --gray: #f5f5f5;
+:root{
+  --yellow:#f4b400;
+  --yellow-light:#ffd633;
+  --dark:#111;
+  --light:#fff;
+  --gray:#f5f5f5;
+  --text:#333;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background: var(--light);
-    color: #333;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;color:var(--text);background:var(--light);line-height:1.6}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
 
 /* NAVBAR */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 40px;
-    background: white;
-    position: sticky;
-    top: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.site-nav{
+  position:sticky;top:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 40px;background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
 }
-
-.logo {
-    font-weight: bold;
-    font-size: 22px;
-    color: var(--dark);
-}
-
-.logo span {
-    color: var(--yellow);
-}
-
-nav ul {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-}
-
-.btn {
-    background: var(--yellow);
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:21px;color:var(--dark)}
+.logo-bolt{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--yellow);color:#111}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:600;color:#333;position:relative;padding:6px 0}
+.nav-links a:hover,.nav-links a.active{color:#c58e00}
+.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--yellow)}
+.nav-cta{background:var(--yellow);padding:10px 18px;border-radius:6px;font-weight:700}
+.menu-toggle{display:none;border:0;background:none;font-size:25px;cursor:pointer}
 
 /* HERO */
-.hero {
-    display: flex;
-    align-items: center;
-    padding: 60px 40px;
-    flex-wrap: wrap;
-}
-
-.hero-text {
-    flex: 1;
-}
-
-.hero h1 {
-    font-size: 40px;
-}
-
-.hero h1 span {
-    color: var(--yellow);
-}
-
-.hero p {
-    margin: 20px 0;
-}
-
-.hero img {
-    flex: 1;
-    width: 100%;
-    border-radius: 10px;
-}
+.hero{display:flex;align-items:center;gap:40px;padding:70px 40px;max-width:1200px;margin:auto}
+.hero-text{flex:1}
+.hero h1{font-size:clamp(36px,5vw,56px);line-height:1.1;color:#111}
+.hero h1 span{color:var(--yellow)}
+.hero p{margin:20px 0;color:#555;max-width:560px}
+.btn{display:inline-block;border:0;background:var(--yellow);padding:12px 22px;border-radius:6px;color:#111;font-weight:700;cursor:pointer}
+.hero img{flex:1;width:100%;max-height:430px;object-fit:cover;border-radius:14px}
 
 /* SERVICES */
-.services {
-    background: var(--gray);
-    padding: 50px 40px;
-    text-align: center;
-}
+.services{background:var(--gray);padding:60px 40px;text-align:center}
+.section-title{font-size:32px;color:#111;margin-bottom:10px}
+.service-boxes{max-width:1100px;margin:30px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.service{background:#fff;padding:25px;border-radius:12px;font-weight:700;box-shadow:0 5px 15px rgba(0,0,0,.05);transition:.3s}
+.service:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
 
-.service-boxes {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
+/* PROJECT GALLERY */
+.gallery-section{padding:60px 40px;max-width:1200px;margin:auto}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px;margin-top:25px}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .3s}
+.gallery-grid img:hover{transform:scale(1.03)}
 
-.service {
-    flex: 1;
-    min-width: 200px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-}
+/* TABBED GALLERY */
+.tabbed-gallery{padding:60px 40px;background:#111;color:#fff}
+.tabbed-inner{max-width:1100px;margin:auto}
+.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:25px 0}
+.tab-btn{padding:11px 20px;border:1px solid #444;background:#222;color:#fff;border-radius:6px;cursor:pointer;font-weight:700;transition:.25s}
+.tab-btn:hover{background:#333}
+.tab-btn.active{background:var(--yellow);color:#111;border-color:var(--yellow)}
+.tab-content{display:none}
+.tab-content.active{display:block;animation:fadeIn .3s ease}
+.tab-gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+.tab-gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .3s}
+.tab-gallery-grid img:hover{transform:scale(1.04)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 
-/* GALLERY */
-.gallery {
-    padding: 50px 40px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-/* LIGHTBOX */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-}
+/* WHY CHOOSE US */
+.why-choose-us{background:#f9f9f9;padding:60px 20px;text-align:center}
+.container{max-width:1100px;margin:auto}
+.subtitle{color:#666;margin-bottom:40px}
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;padding:25px;border-radius:10px;transition:.3s;box-shadow:0 5px 15px rgba(0,0,0,.05)}
+.card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
+.icon{font-size:38px;margin-bottom:12px}
+.card h3{margin-bottom:10px;color:#111}
+.card p{color:#555;font-size:14px}
 
 /* CONTACT */
-.contact {
-    background: var(--gray);
-    padding: 50px 40px;
-}
+.contact{background:var(--gray);padding:60px 40px}
+.contact-inner{max-width:800px;margin:auto}
+.contact h2{text-align:center;margin-bottom:25px}
+.contact form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.contact input,.contact textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;background:#fff}
+.contact textarea{grid-column:1/-1;min-height:130px;resize:vertical}
+.contact button{justify-self:start}
 
-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92%;max-height:88vh;object-fit:contain;border-radius:8px}
+.lightbox-close{position:absolute;top:18px;right:25px;color:#fff;font-size:36px;cursor:pointer;background:none;border:0}
 
-input, textarea {
-    padding: 10px;
-    width: 100%;
-}
-
-footer {
-    background: var(--dark);
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
+/* FOOTER */
+footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
 
 /* RESPONSIVE */
-@media(max-width: 768px) {
-    .hero {
-        flex-direction: column;
-    }
-
-    nav ul {
-        display: none;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edkal Electrical — Navbar</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Inter',sans-serif;}
-  a{text-decoration:none;color:inherit;}
-  ul{list-style:none;}
-
-  .hero-wrap{
-    position:relative;
-    height:100vh;
-    min-height:560px;
-    background:url('https://ima.unsplash.com/photo251189-08b45d6a269e?q=80&w=1600&auto=format&fit=crop') center/cover;
-  }
-  .hero-wrap::before{
-    content:'';
-    position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.15) 35%,rgba(0,0,0,0.35) 100%);
-  }
-
-  /* ---- Navbar ---- */
-  nav{
-    position:relative;
-    z-index:2;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:22px 40px;
-    backdrop-filter:blur(6px);
-    -webkit-backdrop-filter:blur(6px);
-    background:rgba(255,255,255,0.03);
-    border-bottom:1px solid rgba(255,255,255,0.12);
-  }
-
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:#fff;
-    font-weight:700;
-    font-size:18px;
-    letter-spacing:-0.01em;
-  }
-  .logo .bolt{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:32px;
-    height:32px;
-    border-radius:8px;
-    background:#FFD400;
-    color:#111;
-    font-size:16px;
-  }
-
+@media(max-width:860px){
+  .site-nav{padding:14px 20px}
+  .menu-toggle{display:block}
+  .nav-cta{display:none}
   .nav-links{
-    display:flex;
-    gap:32px;
+    position:absolute;top:100%;left:0;right:0;
+    display:none;flex-direction:column;gap:0;
+    background:#111;padding:10px 20px;
   }
-  .nav-links a{
-    color:#f1f1f1;
-    font-size:14px;
-    font-weight:500;
-    position:relative;
-    padding:6px 0;
-    transition:color 0.2s;
-  }
-  .nav-links a:hover{
-    color:#FFD400;
-  }
-  .nav-links a.active{
-    color:#fff;
-  }
-  .nav-links a.active::after{
-    content:'';
-    position:absolute;
-    left:0;right:0;bottom:-4px;
-    height:2px;
-    background:#FFD400;
-  }
-
-  .nav-right{
-    display:flex;
-    align-items:center;
-    gap:16px;
-  }
-  .btn-outline{
-    border:1px solid #FFD400;
-    color:#FFD400;
-    background:transparent;
-    padding:10px 20px;
-    border-radius:6px;
-    font-size:13.5px;
-    font-weight:600;
-    transition:background 0.2s, color 0.2s;
-  }
-  .btn-outline:hover{
-    background:#FFD400;
-    color:#111;
-  }
-
-  /* mobile menu toggle */
-  .menu-toggle{
-    display:none;
-    flex-direction:column;
-    gap:5px;
-    cursor:pointer;
-    background:none;
-    border:none;
-  }
-  .menu-toggle span{
-    width:24px;height:2px;background:#fff;display:block;
-  }
-
-  /* ---- Hero content below navbar (just for context/preview) ---- */
-  .hero-content{
-    position:relative;
-    z-index:2;
-    padding:80px 40px;
-    max-width:640px;
-    color:#fff;
-  }
-  .hero-content .eyebrow{
-    color:#FFD400;
-    font-size:13px;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:0.12em;
-    margin-bottom:18px;
-  }
-  .hero-content h1{
-    font-size:clamp(34px,5vw,56px);
-    line-height:1.1;
-    font-weight:700;
-    margin-bottom:20px;
-  }
-  .hero-content p{
-    font-size:16px;
-    color:#e8e8e8;
-    max-width:440px;
-    margin-bottom:30px;
-    line-height:1.6;
-  }
-  .hero-actions{display:flex;gap:14px;}
-  .btn-solid{
-    background:#FFD400;
-    color:#111;
-    padding:12px 24px;
-    border-radius:6px;
-    font-size:14px;
-    font-weight:600;
-  }
-
-  @media (max-width:860px){
-    .nav-links{
-      position:absolute;
-      top:100%;
-      left:0;right:0;
-      background:rgba(10,10,10,0.95);
-      flex-direction:column;
-      padding:20px 40px;
-      gap:18px;
-      display:none;
-    }
-    .nav-links.open{display:flex;}
-    .menu-toggle{display:flex;}
-    .nav-right .btn-outline{display:none;}
-  }
+  .nav-links.open{display:flex}
+  .nav-links a{display:block;padding:13px;color:#fff}
+  .hero{flex-direction:column;padding:50px 20px}
+  .hero img{max-height:350px}
+  .service-boxes{grid-template-columns:repeat(2,1fr)}
+  .reasons{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .services,.gallery-section,.tabbed-gallery,.contact{padding:45px 20px}
+  .service-boxes,.reasons{grid-template-columns:1fr}
+  .contact form{grid-template-columns:1fr}
+  .contact textarea{grid-column:auto}
+  .tab-btn{flex:1 1 45%}
+}
 </style>
 </head>
+
 <body>
 
-<div class="hero-wrap">
+<nav class="site-nav">
+  <a href="#home" class="logo"><span class="logo-bolt">⚡</span>EDKAL ELECTRICAL</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Quote</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+</nav>
 
-  <nav>
-    <div class="logo">
-      <span class="bolt">⚡</span>
-      EDKAL
-    </div>
+<main id="home">
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-
-    <div class="nav-right">
-      <a href="#" class="btn-outline">WhatsApp Us</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="hero-content">
-    <div class="eyebrow">Safe. Reliable. Professional.</div>
-    <h1>Powering Lusaka with Excellence</h1>
-    <p>Edkal Electrical Services provides top-quality electrical installations, maintenance, and solar solutions for homes, businesses, and industries.</p>
-    <div class="hero-actions">
-      <a href="#" class="btn-solid">Call Us Now</a>
-      <a href="#" class="btn-outline">WhatsApp Us</a>
-    </div>
-  </div>
-
-</div>
-
-<script>
-  const toggle = document.getElementById('menuToggle');
-  const links = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => links.classList.toggle('open'));
-</script>
-
-</body>
-</html>
-
-<!-- HERO -->
 <section class="hero">
-    <div class="hero-text">
-        <h1>Powering Lusaka <span>With Excellence</span></h1>
-        <p>Reliable electrical installations, maintenance, and solar solutions.</p>
-        <div class="btn">Request Quote</div>
-    </div>
-    <img src="IMG-20210729-WA0024.jpg="">
+  <div class="hero-text">
+    <h1>Powering Lusaka <span>With Excellence</span></h1>
+    <p>Reliable electrical installations, maintenance, and solar solutions for homes, businesses, and industries.</p>
+    <a href="#contact" class="btn">Request Quote</a>
+  </div>
+  <img src="IMG-20210729-WA0024.jpg" alt="Edkal Electrical project">
 </section>
 
-<!-- SERVICES -->
-<section class="services">
-    <h2>Our Services</h2>
-    <div class="service-boxes">
-        <div class="service">House Wiring</div>
-        <div class="service">Solar Installation</div>
-        <div class="service">Electrical Repairs</div>
-        <div class="service">Maintenance</div>
-    </div>
+<section class="services" id="services">
+  <h2 class="section-title">Our Services</h2>
+  <p>Professional electrical solutions you can rely on.</p>
+  <div class="service-boxes">
+    <div class="service">House Wiring</div>
+    <div class="service">Solar Installation</div>
+    <div class="service">Electrical Repairs</div>
+    <div class="service">Maintenance</div>
+  </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery">
-    <h2>Our Projects</h2>
-    <div class="gallery-grid">
-        <img src="IMG-20210729-WA0013.jpg">
-        <img src="IMG-20210729-WA0024.jpg">
-        <img src="Screenshot_20260729_013855_WhatsApp.jpg">
-        <img src="Screenshot_20260729_013855_WhatsApp.jpg">
-    </div>
+<section class="gallery-section" id="projects">
+  <h2 class="section-title">Our Projects</h2>
+  <div class="gallery-grid">
+    <img src="IMG-20210729-WA0013.jpg" alt="Electrical project">
+    <img src="IMG-20210729-WA0024.jpg" alt="Electrical project">
+    <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Electrical project">
+    <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Electrical project">
+  </div>
 </section>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-    <img src="" id="lightbox-img">
-</div>
 <section class="tabbed-gallery">
-  <!-- Tabs -->
-  <div class="tabs">
-    <button class="tab-btn active" data-tab="tab1">Residential</button>
-    <button class="tab-btn" data-tab="tab2">Commercial</button>
-    <button class="tab-btn" data-tab="tab3">Industrial</button>
-    <button class="tab-btn" data-tab="tab4">Projects</button>
-  </div>
+  <div class="tabbed-inner">
+    <h2 class="section-title" style="color:#fff;text-align:center;">Project Gallery</h2>
+    <p style="text-align:center;color:#bbb;">Explore our work by project category.</p>
 
-  <!-- Gallery Content -->
-  <div class="tab-content active" id="tab1">
-    <div class="gallery">
-      <img src="https://picsum.photos/300?1" alt="">
-      <img src="https://picsum.photos/300?2" alt="">
-      <img src="https://picsum.photos/300?3" alt="">
-      <img src="https://picsum.photos/300?4" alt="">
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="tab1">Residential</button>
+      <button class="tab-btn" data-tab="tab2">Commercial</button>
+      <button class="tab-btn" data-tab="tab3">Industrial</button>
+      <button class="tab-btn" data-tab="tab4">Projects</button>
     </div>
-  </div>
 
-  <div class="tab-content" id="tab2">
-    <div class="gallery">
-      <img src="https://picsum.photos/300?5" alt="">
-      <img src="https://picsum.photos/300?6" alt="">
-      <img src="https://picsum.photos/300?7" alt="">
-      <img src="https://picsum.photos/300?8" alt="">
+    <div class="tab-content active" id="tab1">
+      <div class="tab-gallery-grid">
+        <img src="IMG-20210729-WA0013.jpg" alt="Residential electrical work">
+        <img src="IMG-20210729-WA0024.jpg" alt="Residential electrical work">
+        <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Residential electrical work">
+        <img src="IMG-20210729-WA0013.jpg" alt="Residential electrical work">
+      </div>
     </div>
-  </div>
 
-  <div class="tab-content" id="tab3">
-    <div class="gallery">
-      <img src="https://picsum.photos/300?9" alt="">
-      <img src="https://picsum.photos/300?10" alt="">
-      <img src="https://picsum.photos/300?11" alt="">
-      <img src="https://picsum.photos/300?12" alt="">
+    <div class="tab-content" id="tab2">
+      <div class="tab-gallery-grid">
+        <img src="IMG-20210729-WA0024.jpg" alt="Commercial electrical work">
+        <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Commercial electrical work">
+        <img src="IMG-20210729-WA0013.jpg" alt="Commercial electrical work">
+        <img src="IMG-20210729-WA0024.jpg" alt="Commercial electrical work">
+      </div>
     </div>
-  </div>
 
-  <div class="tab-content" id="tab4">
-    <div class="gallery">
-      <img src="https://picsum.photos/300?13" alt="">
-      <img src="https://picsum.photos/300?14" alt="">
-      <img src="https://picsum.photos/300?15" alt="">
-      <img src="https://picsum.photos/300?16" alt="">
+    <div class="tab-content" id="tab3">
+      <div class="tab-gallery-grid">
+        <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Industrial electrical work">
+        <img src="IMG-20210729-WA0013.jpg" alt="Industrial electrical work">
+        <img src="IMG-20210729-WA0024.jpg" alt="Industrial electrical work">
+        <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Industrial electrical work">
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab4">
+      <div class="tab-gallery-grid">
+        <img src="IMG-20210729-WA0013.jpg" alt="Edkal Electrical project">
+        <img src="IMG-20210729-WA0024.jpg" alt="Edkal Electrical project">
+        <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Edkal Electrical project">
+        <img src="IMG-20210729-WA0013.jpg" alt="Edkal Electrical project">
+      </div>
     </div>
   </div>
 </section>
 
-<style>
-.tabbed-gallery {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
+<section class="why-choose-us" id="about">
+  <div class="container">
+    <h2 class="section-title">Why Choose Us</h2>
+    <p class="subtitle">Reliable, professional, and built for your safety.</p>
+    <div class="reasons">
+      <div class="card"><div class="icon">⚡</div><h3>Certified Experts</h3><p>Our electricians are trained and certified to handle electrical work safely and efficiently.</p></div>
+      <div class="card"><div class="icon">🛠️</div><h3>Quality Workmanship</h3><p>We deliver high-quality installations and repairs that meet industry standards.</p></div>
+      <div class="card"><div class="icon">⏱️</div><h3>Fast Response</h3><p>We respond quickly and complete projects on time without unnecessary delays.</p></div>
+      <div class="card"><div class="icon">💡</div><h3>Affordable Pricing</h3><p>Transparent pricing with no hidden costs and strong value for your money.</p></div>
+      <div class="card"><div class="icon">🔒</div><h3>Safety First</h3><p>We prioritize safety in every job to protect your home, business, and loved ones.</p></div>
+      <div class="card"><div class="icon">🤝</div><h3>Trusted Service</h3><p>We build long-term relationships through honest, reliable customer service.</p></div>
+    </div>
+  </div>
+</section>
 
-/* Tabs */
-.tabs {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Name" required>
+      <input type="tel" placeholder="Phone" required>
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
 
-.tab-btn {
-  padding: 10px 20px;
-  border: none;
-  background: #eee;
-  cursor: pointer;
-  margin: 5px;
-  transition: 0.3s;
-  font-weight: bold;
-}
+</main>
 
-.tab-btn.active {
-  background: #ffcc00;
-  color: #000;
-}
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <img src="" id="lightboxImg" alt="Expanded project image">
+</div>
 
-.tab-btn:hover {
-  background: #ffd633;
-}
-
-/* Content */
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-/* Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-</style>
+<footer>© 2026 Edkal Electrical Services</footer>
 
 <script>
-const tabs = document.querySelectorAll(".tab-btn");
-const contents = document.querySelectorAll(".tab-content");
+/* Mobile navigation */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    // remove active
-    tabs.forEach(t => t.classList.remove("active"));
-    contents.forEach(c => c.classList.remove("active"));
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
 
-    // add active
-    tab.classList.add("active");
-    document.getElementById(tab.dataset.tab).classList.add("active");
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => navLinks.classList.remove("open"));
+});
+
+/* Tabbed gallery */
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const target = button.dataset.tab;
+
+    tabButtons.forEach(btn => btn.classList.remove("active"));
+    tabContents.forEach(content => content.classList.remove("active"));
+
+    button.classList.add("active");
+    document.getElementById(target).classList.add("active");
   });
 });
-        </script>
 
-    <section class="why-choose-us">
-  <div class="container">
-    <h2>Why Choose Us</h2>
-    <p class="subtitle">Reliable, professional, and built for your safety</p>
-
-    <div class="reasons">
-      
-      <div class="card">
-        <div class="icon">⚡</div>
-        <h3>Certified Experts</h3>
-        <p>Our electricians are trained and certified to handle all types of electrical work safely and efficiently.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🛠️</div>
-        <h3>Quality Workmanship</h3>
-        <p>We deliver high-quality installations and repairs that meet industry standards.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">⏱️</div>
-        <h3>Fast Response</h3>
-        <p>We respond quickly to your needs and complete projects on time without delays.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">💡</div>
-        <h3>Affordable Pricing</h3>
-        <p>Transparent pricing with no hidden costs, giving you the best value for your money.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🔒</div>
-        <h3>Safety First</h3>
-        <p>We prioritize safety in every job to protect your home, business, and loved ones.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🤝</div>
-        <h3>Trusted Service</h3>
-        <p>We build long-term relationships through honesty, reliability, and excellent customer service.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<style>
-.why-choose-us {
-  background: #f9f9f9;
-  padding: 60px 20px;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-.why-choose-us h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #666;
-  margin-bottom: 40px;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* Grid */
-.reasons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-/* Cards */
-.card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  transition: 0.3s;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* Icon */
-.icon {
-  font-size: 40px;
-  margin-bottom: 15px;
-  color: #ffcc00; /* Yellow brand color */
-}
-
-.card h3 {
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: #555;
-  font-size: 14px;
-}
-</style>
-<!-- CONTACT -->
-<section class="contact">
-    <h2>Contact Us</h2>
-    <form>
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="Phone">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Message"></textarea>
-        <button class="btn">Send Message</button>
-    </form>
-</section>
-
-<footer>
-    © 2026 Edkal Electrical Services
-</footer>
-
-<script>
-// LIGHTBOX
-const images = document.querySelectorAll(".gallery img");
+/* Lightbox works for both galleries */
 const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxClose = document.getElementById("lightboxClose");
 
-images.forEach(img => {
-    img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
-    });
+document.querySelectorAll(".gallery-grid img, .tab-gallery-grid img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+  });
 });
 
-lightbox.addEventListener("click", () => {
-    lightbox.style.display = "none";
+function closeLightbox(){
+  lightbox.classList.remove("open");
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImg.src = "";
+}
+
+lightboxClose.addEventListener("click", closeLightbox);
+lightbox.addEventListener("click", e => {
+  if(e.target === lightbox) closeLightbox();
+});
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") closeLightbox();
+});
+
+/* Demo form behavior */
+document.getElementById("contactForm").addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Thank you! Your message has been received.");
 });
 </script>
 
 </body>
-</html>
+                                        </html>
