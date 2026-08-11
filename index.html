@@ -134,18 +134,61 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
 
 
 
-<nav class="site-nav">
-  <a href="#home" class="logo"><span class="logo-bolt">⚡</span>EDKAL ELECTRICAL</a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#home" class="active">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Get Quote</a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+<nav class="nav7">
+  <div class="logo7">⚡ EDKAL ELECTRICAL</div>
+
+  <div class="links7">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <a class="quote7" href="#">Get a Quote</a>
 </nav>
+
+<style>
+.nav7{
+  position:absolute;
+  top:20px;
+  left:5%;
+  right:5%;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:15px 22px;
+  background:#111b;
+  backdrop-filter:blur(12px);
+  border:1px solid #ffffff25;
+  border-radius:12px;
+  font-family:Arial,sans-serif;
+}
+.logo7{
+  color:white;
+  font-weight:bold;
+  font-size:19px;
+}
+.logo7:first-letter{color:#f4b400}
+.links7{
+  display:flex;
+  gap:25px;
+}
+.links7 a{
+  color:#fff;
+  text-decoration:none;
+}
+.links7 a:hover{color:#f4b400}
+.quote7{
+  background:#f4b400;
+  color:#111;
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:5px;
+  font-weight:bold;
+}
+</style>
 
 <main id="home">
 
