@@ -2082,66 +2082,50 @@ function toggleMenu() {
 
 </body>
    </html>
+<div class="gallery-tabs">
+    <button data-category="all">All</button>
+    <button data-category="installation">Installation</button>
+    <button data-category="maintenance">Maintenance</button>
+    <button data-category="lighting">Lighting</button>
+</div>
 
-<section class="gallery-section" id="projects">
-  <h2 class="section-title">Our Projects</h2>
-  <div class="gallery-grid">
-    <img src="IMG-20210729-WA0013.jpg" alt="Electrical project">
-    <img src="IMG-20210729-WA0024.jpg" alt="Electrical project">
-    <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Electrical project">
-    <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Electrical project">
-  </div>
-</section>
+<div class="gallery">
 
-<section class="tabbed-gallery">
-  <div class="tabbed-inner">
-    <h2 class="section-title" style="color:#fff;text-align:center;">Project Gallery.</h2>
-    <p style="text-align:center;color:#bbb;">Explore our work by project category.</p>
+    <img src="images/project1.jpg" data-category="installation">
+    <img src="images/project2.jpg" data-category="maintenance">
+    <img src="images/project3.jpg" data-category="lighting">
+    <img src="images/project4.jpg" data-category="installation">
 
-    <div class="tabs" role="tablist">
-      <button class="tab-btn active" data-tab="tab1">Residential</button>
-      <button class="tab-btn" data-tab="tab2">Commercial</button>
-      <button class="tab-btn" data-tab="tab3">Industrial</button>
-      <button class="tab-btn" data-tab="tab4">Projects</button>
-    </div>
+</div>
+   const tabs = document.querySelectorAll(".gallery-tabs button");
+const images = document.querySelectorAll(".gallery img");
 
-    <div class="tab-content active" id="tab1">
-      <div class="tab-gallery-grid">
-        <img src="IMG-20210729-WA0013.jpg" alt="Residential electrical work">
-        <img src="IMG-20210729-WA0024.jpg" alt="Residential electrical work">
-        <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Residential electrical work">
-        <img src="IMG-20210729-WA0013.jpg" alt="Residential electrical work">
-      </div>
-    </div>
+tabs.forEach(tab => {
 
-    <div class="tab-content" id="tab2">
-      <div class="tab-gallery-grid">
-        <img src="IMG-20210729-WA0024.jpg" alt="Commercial electrical work">
-        <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Commercial electrical work">
-        <img src="IMG-20210729-WA0013.jpg" alt="Commercial electrical work">
-        <img src="IMG-20210729-WA0024.jpg" alt="Commercial electrical work">
-      </div>
-    </div>
+    tab.addEventListener("click", () => {
 
-    <div class="tab-content" id="tab3">
-      <div class="tab-gallery-grid">
-        <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Industrial electrical work">
-        <img src="IMG-20210729-WA0013.jpg" alt="Industrial electrical work">
-        <img src="IMG-20210729-WA0024.jpg" alt="Industrial electrical work">
-        <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Industrial electrical work">
-      </div>
-    </div>
+        const category = tab.dataset.category;
 
-    <div class="tab-content" id="tab4">
-      <div class="tab-gallery-grid">
-        <img src="IMG-20210729-WA0013.jpg" alt="Edkal Electrical project">
-        <img src="IMG-20210729-WA0024.jpg" alt="Edkal Electrical project">
-        <img src="Screenshot_20260729_013855_WhatsApp.jpg" alt="Edkal Electrical project">
-        <img src="IMG-20210729-WA0013.jpg" alt="Edkal Electrical project">
-      </div>
-    </div>
-  </div>
-</section>
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        images.forEach(image => {
+
+            if (
+                category === "all" ||
+                image.dataset.category === category
+            ) {
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
+
 
 <section class="why-choose-us" id="about">
   <div class="container">
