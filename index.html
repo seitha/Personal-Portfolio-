@@ -2166,92 +2166,9 @@ function toggleMenu() {
 
     overflow: hidden;
 
-    background: #eeeeee;
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.5s ease;
-}
 
 
-/* Image hover */
 
-.gallery-item:hover img {
-    transform: scale(1.06);
-}
-
-
-/* =================================
-   HIDDEN ITEMS
-================================= */
-
-.gallery-item.hidden {
-    display: none;
-}
-
-
-/* =================================
-   TABLET
-================================= */
-
-@media (max-width: 850px) {
-
-    .gallery-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .gallery-item {
-        height: 250px;
-    }
-
-}
-
-
-/* =================================
-   MOBILE
-================================= */
-
-@media (max-width: 550px) {
-
-    .gallery-section {
-        padding: 65px 15px;
-    }
-
-    .gallery-tabs {
-        gap: 7px;
-    }
-
-    .gallery-tab {
-        padding: 10px 15px;
-
-        font-size: 12px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-    }
-
-    .gallery-item {
-        height: 240px;
-    }
-
-}
-</style>
 
 
 <script>
@@ -2303,89 +2220,531 @@ function toggleMenu() {
     });
 
 </script>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</body>
-   </html>
-<div class="gallery-tabs">
-    <button data-category="all">All</button>
-    <button data-category="installation">Installation</button>
-    <button data-category="maintenance">Maintenance</button>
-    <button data-category="lighting">Lighting</button>
-</div>
+    <title>Edkal Electrical - Gallery</title>
 
-<div class="gallery">
+    <style>
 
-    <img src="images/project1.jpg" data-category="installation">
-    <img src="images/project2.jpg" data-category="maintenance">
-    <img src="images/project3.jpg" data-category="lighting">
-    <img src="images/project4.jpg" data-category="installation">
+        /* =========================
+           RESET
+        ========================= */
 
-</div>
-   <script>
-   const tabs = document.querySelectorAll(".gallery-tabs button");
-const images = document.querySelectorAll(".gallery img");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-tabs.forEach(tab => {
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #111111;
+        }
 
-    tab.addEventListener("click", () => {
 
-        const category = tab.dataset.category;
+        /* =========================
+           GALLERY SECTION
+        ========================= */
 
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
+        .gallery-section {
+            width: 100%;
+            padding: 80px 20px;
+        }
 
-        images.forEach(image => {
+        .gallery-container {
+            max-width: 1150px;
+            margin: auto;
+        }
 
-            if (
-                category === "all" ||
-                image.dataset.category === category
-            ) {
-                image.style.display = "block";
-            } else {
-                image.style.display = "none";
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-title small {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #e5ad00;
+
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .gallery-title h2 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .gallery-title p {
+            max-width: 600px;
+            margin: auto;
+
+            color: #666666;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           TABS
+        ========================= */
+
+        .gallery-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 35px;
+        }
+
+        .tab-button {
+            padding: 12px 24px;
+
+            border: 1px solid #dddddd;
+
+            background: #ffffff;
+
+            color: #222222;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .tab-button:hover {
+            border-color: #f2bd00;
+        }
+
+        .tab-button.active {
+            background: #f2bd00;
+
+            border-color: #f2bd00;
+
+            color: #111111;
+        }
+
+
+        /* =========================
+           GALLERY GRID
+        ========================= */
+
+        .gallery-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           GALLERY IMAGE
+        ========================= */
+
+        .gallery-image {
+            position: relative;
+
+            height: 280px;
+
+            overflow: hidden;
+
+            background: #eeeeee;
+
+            cursor: pointer;
+
+            animation: showImage 0.4s ease;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-image:hover img {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           HIDE IMAGE
+        ========================= */
+
+        .gallery-image.hide {
+            display: none;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes showImage {
+
+            from {
+                opacity: 0;
+                transform: translateY(10px);
             }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .gallery-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .gallery-section {
+                padding: 60px 15px;
+            }
+
+            .gallery-title h2 {
+                font-size: 32px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-image {
+                height: 250px;
+            }
+
+            .tab-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<section class="gallery-section">
+
+    <div class="gallery-container">
+
+
+        <!-- HEADER -->
+
+        <div class="gallery-title">
+
+            <small>Our Work</small>
+
+            <h2>Project Gallery</h2>
+
+            <p>
+                Explore our electrical installation,
+                maintenance, lighting and repair projects.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             TABS
+        ========================= -->
+
+        <div class="gallery-tabs">
+
+            <button
+                class="tab-button active"
+                data-filter="all">
+
+                All
+
+            </button>
+
+
+            <button
+                class="tab-button"
+                data-filter="installation">
+
+                Installation
+
+            </button>
+
+
+            <button
+                class="tab-button"
+                data-filter="maintenance">
+
+                Maintenance
+
+            </button>
+
+
+            <button
+                class="tab-button"
+                data-filter="lighting">
+
+                Lighting
+
+            </button>
+
+
+            <button
+                class="tab-button"
+                data-filter="repairs">
+
+                Repairs
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================
+             GALLERY
+        ========================= -->
+
+        <div class="gallery-grid">
+
+
+            <!-- INSTALLATION -->
+
+            <div
+                class="gallery-image"
+                data-category="installation">
+
+                <img
+                    src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80"
+                    alt="Electrical installation">
+
+            </div>
+
+
+
+            <!-- MAINTENANCE -->
+
+            <div
+                class="gallery-image"
+                data-category="maintenance">
+
+                <img
+                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80"
+                    alt="Electrical maintenance">
+
+            </div>
+
+
+
+            <!-- LIGHTING -->
+
+            <div
+                class="gallery-image"
+                data-category="lighting">
+
+                <img
+                    src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=900&q=80"
+                    alt="Lighting installation">
+
+            </div>
+
+
+
+            <!-- REPAIRS -->
+
+            <div
+                class="gallery-image"
+                data-category="repairs">
+
+                <img
+                    src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=900&q=80"
+                    alt="Electrical repair">
+
+            </div>
+
+
+
+            <!-- INSTALLATION -->
+
+            <div
+                class="gallery-image"
+                data-category="installation">
+
+                <img
+                    src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80"
+                    alt="Electrical wiring">
+
+            </div>
+
+
+
+            <!-- MAINTENANCE -->
+
+            <div
+                class="gallery-image"
+                data-category="maintenance">
+
+                <img
+                    src="https://images.unsplash.com/photo-1581092919535-7146ff1a590e?auto=format&fit=crop&w=900&q=80"
+                    alt="Electrical maintenance work">
+
+            </div>
+
+
+
+            <!-- LIGHTING -->
+
+            <div
+                class="gallery-image"
+                data-category="lighting">
+
+                <img
+                    src="https://images.unsplash.com/photo-1493229042586-5c9e9e4a5a0a?auto=format&fit=crop&w=900&q=80"
+                    alt="Lighting project">
+
+            </div>
+
+
+
+            <!-- REPAIRS -->
+
+            <div
+                class="gallery-image"
+                data-category="repairs">
+
+                <img
+                    src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80"
+                    alt="Electrical repair project">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    /* Get all buttons */
+
+    const buttons =
+        document.querySelectorAll(".tab-button");
+
+
+    /* Get all gallery images */
+
+    const images =
+        document.querySelectorAll(".gallery-image");
+
+
+    /* Listen for button clicks */
+
+    buttons.forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+
+            /* Get selected category */
+
+            const filter =
+                button.getAttribute("data-filter");
+
+
+            /* Change active button */
+
+            buttons.forEach(function(btn) {
+
+                btn.classList.remove("active");
+
+            });
+
+            button.classList.add("active");
+
+
+            /* Filter gallery */
+
+            images.forEach(function(image) {
+
+                const category =
+                    image.getAttribute("data-category");
+
+
+                if (
+                    filter === "all" ||
+                    category === filter
+                ) {
+
+                    image.classList.remove("hide");
+
+                }
+
+                else {
+
+                    image.classList.add("hide");
+
+                }
+
+            });
 
         });
 
     });
 
-});</script>
+</script>
 
 
-<section class="why-choose-us" id="about">
-  <div class="container">
-    <h2 class="section-title">Why Choose Us</h2>
-    <p class="subtitle">Reliable, professional, and built for your safety.</p>
-    <div class="reasons">
-      <div class="card"><div class="icon">⚡</div><h3>Experienced Team</h3><p> Our team of experts has extensive experience in electrical and industrial maintenance, ensuring that your equipment is in good hands.  .</p></div>
-      <div class="card"><div class="icon">🛠️</div><h3>State-of-the-Art Equipment</h3><p> We use modern equipment and technology to ensure efficient and effective services.  </p></div>
-      <div class="card"><div class="icon">⏱️</div><h3>Prompt Response</h3><p>We understand the importance of minimizing downtime and respond promptly to your service requests.</p></div>
-      <div class="card"><div class="icon">💡</div><h3>Competitive Pricing</h3><p> We offer competitive pricing without compromising on quality, ensuring that you get value for your money.</p></div>
-      <div class="card"><div class="icon">🔒</div><h3>Safety First</h3><p>We prioritize safety in every job to protect your home, business, and loved ones.</p></div>
-      <div class="card"><div class="icon">🤝</div><h3>Trusted Service</h3><p>We build long-term relationships through honest, reliable customer service.</p></div>
-    </div>
-  </div>
-</section>
+</body>
+</html>
 
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <h2>Contact Us</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Name" required>
-      <input type="tel" placeholder="Phone" required>
-      <input type="email" placeholder="Email">
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit" class="btn">Send  Message</button>
-    </form>
-  </div>
-</section>
-
-</main>
-
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-  <img src="" id="lightboxImg" alt="Expanded project image">
-</div>
+</body>
+   </html>
 
 <footer>© 2026 Edkal Electrical Services</footer>
 
