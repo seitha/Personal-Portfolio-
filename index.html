@@ -988,17 +988,1100 @@ function toggleMenu() {
   </div>
   <img src="TTX.png" alt="Edkal Electrical project">
 </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<section class="services" id="services">
-  <h2 class="section-title">Our Services </h2>
-  <p>Professional electrical solutions you can rely on.</p>
-  <div class="service-boxes">
-    <div class="service">House Wiring</div>
-    <div class="service">Solar Installation</div>
-    <div class="service">Electrical Repairs</div>
-    <div class="service">Maintenance</div>
-  </div>
+    <title>Edkal Electrical Services</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ==============================
+           GENERAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            background: #ffffff;
+            color: #15191d;
+        }
+
+        /* ==============================
+           SERVICES SECTION
+        ============================== */
+
+        .services-section {
+            width: 100%;
+            padding: 100px 20px;
+            background: #ffffff;
+        }
+
+        .services-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* ==============================
+           SECTION HEADER
+        ============================== */
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .services-label {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: #eab400;
+        }
+
+        .services-label::before {
+            content: "";
+            width: 42px;
+            height: 4px;
+            background: #f2bd00;
+        }
+
+        .services-header h2 {
+            margin-top: 10px;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: clamp(34px, 5vw, 56px);
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+
+            color: #11161a;
+        }
+
+        .services-header p {
+            max-width: 650px;
+            margin: 18px auto 0;
+
+            font-size: 16px;
+            line-height: 1.7;
+            color: #697078;
+        }
+
+        /* ==============================
+           ACCORDION
+        ============================== */
+
+        .services-list {
+            border-top: 1px solid #e7e7e7;
+        }
+
+        .service-item {
+            position: relative;
+            border-bottom: 1px solid #e4e4e4;
+
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        /* ==============================
+           SERVICE HEADER
+        ============================== */
+
+        .service-header {
+            width: 100%;
+            min-height: 78px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 15px 0 20px;
+
+            background: transparent;
+            border: none;
+
+            cursor: pointer;
+            text-align: left;
+
+            font-family: inherit;
+
+            transition:
+                padding 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .service-header:hover {
+            background: #fafafa;
+        }
+
+        /* Yellow number */
+
+        .service-number {
+            width: 65px;
+            flex-shrink: 0;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+
+            color: #eab400;
+        }
+
+        /* Service name */
+
+        .service-name {
+            flex: 1;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+
+            color: #171b1f;
+
+            transition: color 0.3s ease;
+        }
+
+        /* Plus / Minus */
+
+        .service-toggle {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 27px;
+            font-weight: 400;
+
+            color: #eab400;
+
+            transition:
+                transform 0.3s ease,
+                color 0.3s ease;
+        }
+
+        /* ==============================
+           ACTIVE SERVICE
+        ============================== */
+
+        .service-item.active {
+            border-bottom-color: #dedede;
+        }
+
+        .service-item.active::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 4px;
+
+            background: #f2bd00;
+        }
+
+        .service-item.active .service-header {
+            padding-left: 26px;
+        }
+
+        .service-item.active .service-name {
+            color: #11161a;
+        }
+
+        .service-item.active .service-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* ==============================
+           SERVICE CONTENT
+        ============================== */
+
+        .service-content {
+            max-height: 0;
+            overflow: hidden;
+
+            opacity: 0;
+
+            transition:
+                max-height 0.45s ease,
+                opacity 0.3s ease;
+        }
+
+        .service-item.active .service-content {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .service-content-inner {
+            display: grid;
+
+            grid-template-columns:
+                minmax(200px, 1fr)
+                minmax(250px, 1.2fr);
+
+            gap: 50px;
+
+            padding: 0 65px 35px 85px;
+        }
+
+        /* Description */
+
+        .service-description {
+            color: #606970;
+
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .service-description strong {
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+
+            color: #191d21;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==============================
+           SERVICE FEATURES
+        ============================== */
+
+        .service-features {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 14px 25px;
+
+            list-style: none;
+        }
+
+        .service-features li {
+            position: relative;
+
+            padding-left: 22px;
+
+            font-size: 14px;
+            line-height: 1.5;
+
+            color: #343a40;
+        }
+
+        .service-features li::before {
+            content: "✓";
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            font-family: "Montserrat", sans-serif;
+            font-weight: 800;
+
+            color: #eab400;
+        }
+
+        /* ==============================
+           CTA
+        ============================== */
+
+        .services-cta {
+            margin-top: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding: 28px 32px;
+
+            background: #151a1e;
+        }
+
+        .services-cta-text h3 {
+            margin-bottom: 5px;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+
+            color: #ffffff;
+        }
+
+        .services-cta-text p {
+            font-size: 14px;
+            color: #aeb4b9;
+        }
+
+        .services-cta a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 160px;
+            padding: 13px 22px;
+
+            background: #f2bd00;
+            color: #11161a;
+
+            text-decoration: none;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .services-cta a:hover {
+            background: #ffd33d;
+            transform: translateY(-2px);
+        }
+
+        /* ==============================
+           TABLET
+        ============================== */
+
+        @media (max-width: 768px) {
+
+            .services-section {
+                padding: 75px 18px;
+            }
+
+            .services-header {
+                margin-bottom: 40px;
+            }
+
+            .services-header h2 {
+                font-size: 38px;
+            }
+
+            .service-header {
+                min-height: 70px;
+                padding-left: 14px;
+            }
+
+            .service-item.active .service-header {
+                padding-left: 20px;
+            }
+
+            .service-number {
+                width: 52px;
+                font-size: 13px;
+            }
+
+            .service-name {
+                font-size: 15px;
+            }
+
+            .service-content-inner {
+                grid-template-columns: 1fr;
+                gap: 25px;
+
+                padding:
+                    0
+                    30px
+                    30px
+                    66px;
+            }
+
+            .services-cta {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+        }
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 500px) {
+
+            .services-section {
+                padding: 60px 14px;
+            }
+
+            .services-header {
+                margin-bottom: 32px;
+            }
+
+            .services-label {
+                font-size: 11px;
+                letter-spacing: 1.5px;
+            }
+
+            .services-header h2 {
+                font-size: 32px;
+                letter-spacing: -1px;
+            }
+
+            .services-header p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .service-header {
+                min-height: 65px;
+                padding: 0 8px 0 12px;
+            }
+
+            .service-item.active .service-header {
+                padding-left: 17px;
+            }
+
+            .service-number {
+                width: 42px;
+                font-size: 11px;
+            }
+
+            .service-name {
+                font-size: 14px;
+                line-height: 1.3;
+            }
+
+            .service-toggle {
+                width: 32px;
+                height: 32px;
+                font-size: 23px;
+            }
+
+            .service-content-inner {
+                padding:
+                    0
+                    18px
+                    27px
+                    54px;
+
+                gap: 22px;
+            }
+
+            .service-description {
+                font-size: 13px;
+                line-height: 1.7;
+            }
+
+            .service-features {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .service-features li {
+                font-size: 13px;
+            }
+
+            .services-cta {
+                margin-top: 30px;
+                padding: 24px 20px;
+            }
+
+            .services-cta-text h3 {
+                font-size: 16px;
+            }
+
+            .services-cta-text p {
+                font-size: 13px;
+            }
+
+            .services-cta a {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- ==========================================
+     EDkal ELECTRICAL SERVICES
+     ========================================== -->
+
+<section class="services-section" id="services">
+
+    <div class="services-container">
+
+        <!-- SECTION HEADER -->
+
+        <div class="services-header">
+
+            <div class="services-label">
+                What We Do
+            </div>
+
+            <h2>Our Services</h2>
+
+            <p>
+                Professional electrical solutions delivered with
+                safety, precision and reliability.
+            </p>
+
+        </div>
+
+
+        <!-- SERVICES ACCORDION -->
+
+        <div class="services-list">
+
+
+            <!-- SERVICE 01 -->
+
+            <div class="service-item active">
+
+                <button class="service-header" type="button">
+
+                    <span class="service-number">
+                        01
+                    </span>
+
+                    <span class="service-name">
+                        Electrical Installation
+                    </span>
+
+                    <span class="service-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="service-content">
+
+                    <div class="service-content-inner">
+
+                        <div class="service-description">
+
+                            <strong>
+                                Professional Installation
+                            </strong>
+
+                            We provide professional electrical
+                            installation services for residential,
+                            commercial and industrial properties.
+
+                            Our installations are designed to be
+                            safe, efficient and built to last.
+
+                        </div>
+
+
+                        <ul class="service-features">
+
+                            <li>
+                                Wiring & Rewiring
+                            </li>
+
+                            <li>
+                                Distribution Boards
+                            </li>
+
+                            <li>
+                                Socket & Switch Installation
+                            </li>
+
+                            <li>
+                                New Electrical Systems
+                            </li>
+
+                            <li>
+                                Circuit Installation
+                            </li>
+
+                            <li>
+                                Electrical Upgrades
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 02 -->
+
+            <div class="service-item">
+
+                <button class="service-header" type="button">
+
+                    <span class="service-number">
+                        02
+                    </span>
+
+                    <span class="service-name">
+                        Electrical Maintenance
+                    </span>
+
+                    <span class="service-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="service-content">
+
+                    <div class="service-content-inner">
+
+                        <div class="service-description">
+
+                            <strong>
+                                Preventive Maintenance
+                            </strong>
+
+                            Regular electrical maintenance helps
+                            identify potential problems before they
+                            become expensive or dangerous failures.
+
+                        </div>
+
+
+                        <ul class="service-features">
+
+                            <li>
+                                Electrical System Checks
+                            </li>
+
+                            <li>
+                                Preventive Maintenance
+                            </li>
+
+                            <li>
+                                Component Replacement
+                            </li>
+
+                            <li>
+                                Electrical Upgrades
+                            </li>
+
+                            <li>
+                                Equipment Maintenance
+                            </li>
+
+                            <li>
+                                System Testing
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 03 -->
+
+            <div class="service-item">
+
+                <button class="service-header" type="button">
+
+                    <span class="service-number">
+                        03
+                    </span>
+
+                    <span class="service-name">
+                        Fault Finding & Repairs
+                    </span>
+
+                    <span class="service-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="service-content">
+
+                    <div class="service-content-inner">
+
+                        <div class="service-description">
+
+                            <strong>
+                                Diagnosis & Repairs
+                            </strong>
+
+                            We identify electrical faults and provide
+                            practical repair solutions to restore
+                            safe and reliable operation.
+
+                        </div>
+
+
+                        <ul class="service-features">
+
+                            <li>
+                                Fault Diagnosis
+                            </li>
+
+                            <li>
+                                Circuit Repairs
+                            </li>
+
+                            <li>
+                                Power Failure Diagnosis
+                            </li>
+
+                            <li>
+                                Short Circuit Repairs
+                            </li>
+
+                            <li>
+                                Wiring Faults
+                            </li>
+
+                            <li>
+                                Component Replacement
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 04 -->
+
+            <div class="service-item">
+
+                <button class="service-header" type="button">
+
+                    <span class="service-number">
+                        04
+                    </span>
+
+                    <span class="service-name">
+                        Lighting Solutions
+                    </span>
+
+                    <span class="service-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="service-content">
+
+                    <div class="service-content-inner">
+
+                        <div class="service-description">
+
+                            <strong>
+                                Lighting Installation
+                            </strong>
+
+                            Professional lighting installation
+                            solutions designed to improve safety,
+                            visibility and the appearance of your
+                            property.
+
+                        </div>
+
+
+                        <ul class="service-features">
+
+                            <li>
+                                Indoor Lighting
+                            </li>
+
+                            <li>
+                                Outdoor Lighting
+                            </li>
+
+                            <li>
+                                Security Lighting
+                            </li>
+
+                            <li>
+                                LED Lighting
+                            </li>
+
+                            <li>
+                                Exterior Lighting
+                            </li>
+
+                            <li>
+                                Lighting Upgrades
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 05 -->
+
+            <div class="service-item">
+
+                <button class="service-header" type="button">
+
+                    <span class="service-number">
+                        05
+                    </span>
+
+                    <span class="service-name">
+                        Electrical Inspection
+                    </span>
+
+                    <span class="service-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="service-content">
+
+                    <div class="service-content-inner">
+
+                        <div class="service-description">
+
+                            <strong>
+                                Safety & Testing
+                            </strong>
+
+                            Electrical inspections help identify
+                            unsafe conditions, defective components
+                            and potential electrical hazards.
+
+                        </div>
+
+
+                        <ul class="service-features">
+
+                            <li>
+                                Electrical Safety Checks
+                            </li>
+
+                            <li>
+                                Wiring Inspection
+                            </li>
+
+                            <li>
+                                Circuit Testing
+                            </li>
+
+                            <li>
+                                Distribution Board Inspection
+                            </li>
+
+                            <li>
+                                System Assessment
+                            </li>
+
+                            <li>
+                                Safety Recommendations
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 06 -->
+
+            <div class="service-item">
+
+                <button class="service-header" type="button">
+
+                    <span class="service-number">
+                        06
+                    </span>
+
+                    <span class="service-name">
+                        Power & Distribution
+                    </span>
+
+                    <span class="service-toggle">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="service-content">
+
+                    <div class="service-content-inner">
+
+                        <div class="service-description">
+
+                            <strong>
+                                Power Distribution
+                            </strong>
+
+                            Reliable power distribution solutions
+                            for electrical systems, buildings and
+                            commercial environments.
+
+                        </div>
+
+
+                        <ul class="service-features">
+
+                            <li>
+                                Distribution Boards
+                            </li>
+
+                            <li>
+                                Circuit Breakers
+                            </li>
+
+                            <li>
+                                Power Distribution
+                            </li>
+
+                            <li>
+                                Electrical Panels
+                            </li>
+
+                            <li>
+                                Circuit Protection
+                            </li>
+
+                            <li>
+                                System Upgrades
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <div class="services-cta">
+
+            <div class="services-cta-text">
+
+                <h3>
+                    Need an electrical solution?
+                </h3>
+
+                <p>
+                    Speak with our team about your next project.
+                </p>
+
+            </div>
+
+            <a href="#contact">
+                Get In Touch
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+
+<script>
+
+    /* ==========================================
+       SERVICES ACCORDION
+       ========================================== */
+
+    const serviceItems =
+        document.querySelectorAll(".service-item");
+
+
+    serviceItems.forEach(item => {
+
+        const button =
+            item.querySelector(".service-header");
+
+
+        button.addEventListener("click", () => {
+
+            const isActive =
+                item.classList.contains("active");
+
+
+            /*
+             * Close every other service
+             */
+
+            serviceItems.forEach(otherItem => {
+
+                otherItem.classList.remove("active");
+
+            });
+
+
+            /*
+             * Open the selected service
+             * unless it was already open.
+             */
+
+            if (!isActive) {
+
+                item.classList.add("active");
+
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+   </html>
 
 <section class="gallery-section" id="projects">
   <h2 class="section-title">Our Projects</h2>
