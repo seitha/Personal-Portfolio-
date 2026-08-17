@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,75 +10,203 @@
   --yellow:#f4b400;
   --yellow-light:#ffd633;
   --dark:#111;
-  --light:#fff; 
+  --light:#fff;
   --gray:#f5f5f5;
   --text:#333;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;color:var(--text);background:var(--light);line-height:1.6}
+body{
+  font-family:Arial,sans-serif;
+  color:var(--text);
+  background:var(--light);
+  line-height:1.6
+}
 a{text-decoration:none;color:inherit}
 button,input,textarea{font:inherit}
 
 /* NAVBAR */
 .site-nav{
-  position:sticky;top:0;z-index:1000;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:16px 40px;background:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 40px;
+  background:#fff;
   box-shadow:0 2px 10px rgba(0,0,0,.1);
 }
-.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:21px;color:var(--dark)}
-.logo-bolt{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--yellow);color:#111}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{font-weight:600;color:#333;position:relative;padding:6px 0}
-.nav-links a:hover,.nav-links a.active{color:#c58e00}
-.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--yellow)}
-.nav-cta{background:var(--yellow);padding:10px 18px;border-radius:6px;font-weight:700}
-.menu-toggle{display:none;border:0;background:none;font-size:25px;cursor:pointer}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-weight:800;
+  font-size:21px;
+  color:var(--dark)
+}
+
+.logo-bolt{
+  display:grid;
+  place-items:center;
+  width:32px;
+  height:32px;
+  border-radius:8px;
+  background:var(--yellow);
+  color:#111
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  list-style:none
+}
+
+.nav-links a{
+  font-weight:600;
+  color:#333;
+  position:relative;
+  padding:6px 0
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color:#c58e00
+}
+
+.nav-links a.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:2px;
+  background:var(--yellow)
+}
+
+.nav-cta{
+  background:var(--yellow);
+  padding:10px 18px;
+  border-radius:6px;
+  font-weight:700
+}
+
+.menu-toggle{
+  display:none;
+  border:0;
+  background:none;
+  font-size:25px;
+  cursor:pointer
+}
 
 /* HERO */
-.hero{display:flex;align-items:center;gap:40px;padding:70px 40px;max-width:1200px;margin:auto}
-.hero-text{flex:1}
-.hero h1{font-size:clamp(36px,5vw,56px);line-height:1.1;color:#111}
-.hero h1 span{color:var(--yellow)}
-.hero p{margin:20px 0;color:#555;max-width:560px}
-.btn{display:inline-block;border:0;background:var(--yellow);padding:12px 22px;border-radius:6px;color:#111;font-weight:700;cursor:pointer}
-.hero img{flex:1;width:100%;max-height:430px;object-fit:cover;border-radius:14px}
+.hero{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  padding:70px 40px;
+  max-width:1200px;
+  margin:auto
+}
 
-/* SERVICES */
-.services{background:var(--gray);padding:60px 40px;text-align:center}
-.section-title{font-size:32px;color:#111;margin-bottom:10px}
-.service-boxes{max-width:1100px;margin:30px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.service{background:#fff;padding:25px;border-radius:12px;font-weight:700;box-shadow:0 5px 15px rgba(0,0,0,.05);transition:.3s}
-.service:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
+.hero-text{flex:1}
+
+.hero h1{
+  font-size:clamp(36px,5vw,56px);
+  line-height:1.1;
+  color:#111
+}
+
+.hero h1 span{color:var(--yellow)}
+
+.hero p{
+  margin:20px 0;
+  color:#555;
+  max-width:560px
+}
+
+.btn{
+  display:inline-block;
+  border:0;
+  background:var(--yellow);
+  padding:12px 22px;
+  border-radius:6px;
+  color:#111;
+  font-weight:700;
+  cursor:pointer
+}
+
+.hero img{
+  flex:1;
+  width:100%;
+  max-height:430px;
+  object-fit:cover;
+  border-radius:14px
+}
+
+/* SERVICES ORIGINAL CSS */
+.services{
+  background:var(--gray);
+  padding:60px 40px;
+  text-align:center
+}
+
+.section-title{
+  font-size:32px;
+  color:#111;
+  margin-bottom:10px
+}
+
+.service-boxes{
+  max-width:1100px;
+  margin:30px auto 0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px
+}
+
+.service{
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  font-weight:700;
+  box-shadow:0 5px 15px rgba(0,0,0,.05);
+  transition:.3s
+}
+
+.service:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,.1)
+}
 
 /* =========================================================
-   FIXED TABBED GALLERY
+   TABBED GALLERY
 ========================================================= */
 
 .tabbed-gallery{
   padding:60px 40px;
   background:#111;
-  color:#fff;
+  color:#fff
 }
 
 .tabbed-inner{
   max-width:1100px;
-  margin:auto;
+  margin:auto
 }
 
 .tabbed-gallery-title{
   text-align:center;
-  margin-bottom:10px;
-  color:#fff;
   font-size:32px;
+  color:#fff;
+  margin-bottom:10px
 }
 
 .tabbed-gallery-subtitle{
   text-align:center;
   color:#aaa;
-  margin-bottom:25px;
+  margin-bottom:25px
 }
 
 .tabs{
@@ -86,7 +214,7 @@ button,input,textarea{font:inherit}
   justify-content:center;
   gap:8px;
   flex-wrap:wrap;
-  margin:25px 0;
+  margin:25px 0
 }
 
 .tab-btn{
@@ -97,32 +225,30 @@ button,input,textarea{font:inherit}
   border-radius:6px;
   cursor:pointer;
   font-weight:700;
-  transition:.25s;
+  transition:.25s
 }
 
-.tab-btn:hover{
-  background:#333;
-}
+.tab-btn:hover{background:#333}
 
 .tab-btn.active{
   background:var(--yellow);
   color:#111;
-  border-color:var(--yellow);
+  border-color:var(--yellow)
 }
 
 .tab-content{
-  display:none;
+  display:none
 }
 
 .tab-content.active{
   display:block;
-  animation:fadeIn .3s ease;
+  animation:fadeIn .3s ease
 }
 
 .tab-gallery-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:15px;
+  gap:15px
 }
 
 .tab-gallery-grid img{
@@ -132,44 +258,368 @@ button,input,textarea{font:inherit}
   object-fit:cover;
   border-radius:10px;
   cursor:pointer;
-  transition:transform .3s ease,opacity .3s ease;
+  transition:transform .3s ease,opacity .3s ease
 }
 
 .tab-gallery-grid img:hover{
   transform:scale(1.04);
-  opacity:.9;
+  opacity:.9
 }
 
 @keyframes fadeIn{
   from{
     opacity:0;
-    transform:translateY(5px);
+    transform:translateY(5px)
   }
   to{
     opacity:1;
-    transform:none;
+    transform:none
   }
 }
 
-/* WHY CHOOSE US */
-.why-choose-us{background:#f9f9f9;padding:60px 20px;text-align:center}
-.container{max-width:1100px;margin:auto}
-.subtitle{color:#666;margin-bottom:40px}
-.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#fff;padding:25px;border-radius:10px;transition:.3s;box-shadow:0 5px 15px rgba(0,0,0,.05)}
-.card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
-.icon{font-size:38px;margin-bottom:12px}
-.card h3{margin-bottom:10px;color:#111}
-.card p{color:#555;font-size:14px}
+/* =========================================================
+   WHY CHOOSE US
+========================================================= */
+
+.why-choose-us{
+  background:#f9f9f9;
+  padding:60px 20px;
+  text-align:center
+}
+
+.container{
+  max-width:1100px;
+  margin:auto
+}
+
+.subtitle{
+  color:#666;
+  margin-bottom:40px
+}
+
+.reasons{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px
+}
+
+.card{
+  background:#fff;
+  padding:25px;
+  border-radius:10px;
+  transition:.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,.05)
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,.1)
+}
+
+.icon{
+  font-size:38px;
+  margin-bottom:12px
+}
+
+.card h3{
+  margin-bottom:10px;
+  color:#111
+}
+
+.card p{
+  color:#555;
+  font-size:14px
+}
+
+/* =========================================================
+   OUR SERVICES
+========================================================= */
+
+.services-section{
+  width:100%;
+  padding:100px 20px;
+  background:#fff
+}
+
+.services-container{
+  width:100%;
+  max-width:1100px;
+  margin:auto
+}
+
+.services-header{
+  text-align:center;
+  margin-bottom:55px
+}
+
+.services-label{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#eab400
+}
+
+.services-label::before{
+  content:"";
+  width:42px;
+  height:4px;
+  background:#f2bd00
+}
+
+.services-header h2{
+  margin-top:10px;
+  font-family:Arial,sans-serif;
+  font-size:clamp(34px,5vw,56px);
+  line-height:1.05;
+  font-weight:800;
+  letter-spacing:-1.5px;
+  color:#11161a
+}
+
+.services-header p{
+  max-width:650px;
+  margin:18px auto 0;
+  font-size:16px;
+  line-height:1.7;
+  color:#697078
+}
+
+.services-list{
+  border-top:1px solid #e7e7e7
+}
+
+.service-item{
+  position:relative;
+  border-bottom:1px solid #e4e4e4;
+  transition:background .3s ease,border-color .3s ease
+}
+
+.service-header{
+  width:100%;
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  padding:0 15px 0 20px;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  text-align:left;
+  font-family:inherit;
+  transition:padding .3s ease,background .3s ease
+}
+
+.service-header:hover{
+  background:#fafafa
+}
+
+.service-number{
+  width:65px;
+  flex-shrink:0;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+  font-weight:700;
+  color:#eab400
+}
+
+.service-name{
+  flex:1;
+  font-family:Arial,sans-serif;
+  font-size:17px;
+  font-weight:700;
+  color:#171b1f;
+  transition:color .3s ease
+}
+
+.service-toggle{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  font-family:Arial,sans-serif;
+  font-size:27px;
+  font-weight:400;
+  color:#eab400;
+  transition:transform .3s ease,color .3s ease
+}
+
+.service-item.active{
+  border-bottom-color:#dedede
+}
+
+.service-item.active::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:#f2bd00
+}
+
+.service-item.active .service-header{
+  padding-left:26px
+}
+
+.service-item.active .service-name{
+  color:#11161a
+}
+
+.service-item.active .service-toggle{
+  transform:rotate(45deg)
+}
+
+.service-content{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:max-height .45s ease,opacity .3s ease
+}
+
+.service-item.active .service-content{
+  max-height:500px;
+  opacity:1
+}
+
+.service-content-inner{
+  display:grid;
+  grid-template-columns:minmax(200px,1fr) minmax(250px,1.2fr);
+  gap:50px;
+  padding:0 65px 35px 85px
+}
+
+.service-description{
+  color:#606970;
+  font-size:15px;
+  line-height:1.8
+}
+
+.service-description strong{
+  display:block;
+  margin-bottom:10px;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+  font-weight:700;
+  color:#191d21;
+  text-transform:uppercase;
+  letter-spacing:.5px
+}
+
+.service-features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px 25px;
+  list-style:none
+}
+
+.service-features li{
+  position:relative;
+  padding-left:22px;
+  font-size:14px;
+  line-height:1.5;
+  color:#343a40
+}
+
+.service-features li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:0;
+  font-family:Arial,sans-serif;
+  font-weight:800;
+  color:#eab400
+}
+
+.services-cta{
+  margin-top:45px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  padding:28px 32px;
+  background:#151a1e
+}
+
+.services-cta-text h3{
+  margin-bottom:5px;
+  font-family:Arial,sans-serif;
+  font-size:18px;
+  font-weight:700;
+  color:#fff
+}
+
+.services-cta-text p{
+  font-size:14px;
+  color:#aeb4b9
+}
+
+.services-cta a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:160px;
+  padding:13px 22px;
+  background:#f2bd00;
+  color:#11161a;
+  text-decoration:none;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:700;
+  transition:background .3s ease,transform .3s ease
+}
+
+.services-cta a:hover{
+  background:#ffd33d;
+  transform:translateY(-2px)
+}
 
 /* CONTACT */
-.contact{background:var(--gray);padding:60px 40px}
-.contact-inner{max-width:800px;margin:auto}
-.contact h2{text-align:center;margin-bottom:25px}
-.contact form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.contact input,.contact textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;background:#fff}
-.contact textarea{grid-column:1/-1;min-height:130px;resize:vertical}
-.contact button{justify-self:start}
+.contact{
+  background:var(--gray);
+  padding:60px 40px
+}
+
+.contact-inner{
+  max-width:800px;
+  margin:auto
+}
+
+.contact h2{
+  text-align:center;
+  margin-bottom:25px
+}
+
+.contact form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px
+}
+
+.contact input,
+.contact textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  background:#fff
+}
+
+.contact textarea{
+  grid-column:1/-1;
+  min-height:130px;
+  resize:vertical
+}
+
+.contact button{
+  justify-self:start
+}
 
 /* LIGHTBOX */
 .lightbox{
@@ -180,18 +630,18 @@ button,input,textarea{font:inherit}
   display:none;
   align-items:center;
   justify-content:center;
-  padding:20px;
+  padding:20px
 }
 
 .lightbox.open{
-  display:flex;
+  display:flex
 }
 
 .lightbox img{
   max-width:92%;
   max-height:88vh;
   object-fit:contain;
-  border-radius:8px;
+  border-radius:8px
 }
 
 .lightbox-close{
@@ -202,50 +652,239 @@ button,input,textarea{font:inherit}
   font-size:36px;
   cursor:pointer;
   background:none;
-  border:0;
+  border:0
 }
 
 /* FOOTER */
-footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
+footer{
+  background:var(--dark);
+  color:#fff;
+  text-align:center;
+  padding:22px
+}
 
 /* RESPONSIVE */
 @media(max-width:860px){
-  .site-nav{padding:14px 20px}
-  .menu-toggle{display:block}
-  .nav-cta{display:none}
-  .nav-links{
-    position:absolute;top:100%;left:0;right:0;
-    display:none;flex-direction:column;gap:0;
-    background:#111;padding:10px 20px;
+
+  .site-nav{
+    padding:14px 20px
   }
-  .nav-links.open{display:flex}
-  .nav-links a{display:block;padding:13px;color:#fff}
-  .hero{flex-direction:column;padding:50px 20px}
-  .hero img{max-height:350px}
-  .service-boxes{grid-template-columns:repeat(2,1fr)}
-  .reasons{grid-template-columns:repeat(2,1fr)}
+
+  .menu-toggle{
+    display:block
+  }
+
+  .nav-cta{
+    display:none
+  }
+
+  .nav-links{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    display:none;
+    flex-direction:column;
+    gap:0;
+    background:#111;
+    padding:10px 20px
+  }
+
+  .nav-links.open{
+    display:flex
+  }
+
+  .nav-links a{
+    display:block;
+    padding:13px;
+    color:#fff
+  }
+
+  .hero{
+    flex-direction:column;
+    padding:50px 20px
+  }
+
+  .hero img{
+    max-height:350px
+  }
+
+  .service-boxes{
+    grid-template-columns:repeat(2,1fr)
+  }
+
+  .reasons{
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+
+@media(max-width:768px){
+
+  .services-section{
+    padding:75px 18px
+  }
+
+  .services-header{
+    margin-bottom:40px
+  }
+
+  .services-header h2{
+    font-size:38px
+  }
+
+  .service-header{
+    min-height:70px;
+    padding-left:14px
+  }
+
+  .service-item.active .service-header{
+    padding-left:20px
+  }
+
+  .service-number{
+    width:52px;
+    font-size:13px
+  }
+
+  .service-name{
+    font-size:15px
+  }
+
+  .service-content-inner{
+    grid-template-columns:1fr;
+    gap:25px;
+    padding:0 30px 30px 66px
+  }
+
+  .services-cta{
+    align-items:flex-start;
+    flex-direction:column
+  }
 }
 
 @media(max-width:560px){
-  .services,.gallery-section,.tabbed-gallery,.contact{padding:45px 20px}
-  .service-boxes,.reasons{grid-template-columns:1fr}
-  .contact form{grid-template-columns:1fr}
-  .contact textarea{grid-column:auto}
-  .tab-btn{flex:1 1 45%}
+
+  .services,
+  .gallery-section,
+  .tabbed-gallery,
+  .contact{
+    padding:45px 20px
+  }
+
+  .service-boxes,
+  .reasons{
+    grid-template-columns:1fr
+  }
+
+  .contact form{
+    grid-template-columns:1fr
+  }
+
+  .contact textarea{
+    grid-column:auto
+  }
+
+  .tab-btn{
+    flex:1 1 45%
+  }
 }
 
-/* TABBED GALLERY MOBILE */
 @media(max-width:500px){
+
+  .services-section{
+    padding:60px 14px
+  }
+
+  .services-header{
+    margin-bottom:32px
+  }
+
+  .services-label{
+    font-size:11px;
+    letter-spacing:1.5px
+  }
+
+  .services-header h2{
+    font-size:32px;
+    letter-spacing:-1px
+  }
+
+  .services-header p{
+    font-size:14px;
+    line-height:1.6
+  }
+
+  .service-header{
+    min-height:65px;
+    padding:0 8px 0 12px
+  }
+
+  .service-item.active .service-header{
+    padding-left:17px
+  }
+
+  .service-number{
+    width:42px;
+    font-size:11px
+  }
+
+  .service-name{
+    font-size:14px;
+    line-height:1.3
+  }
+
+  .service-toggle{
+    width:32px;
+    height:32px;
+    font-size:23px
+  }
+
+  .service-content-inner{
+    padding:0 18px 27px 54px;
+    gap:22px
+  }
+
+  .service-description{
+    font-size:13px;
+    line-height:1.7
+  }
+
+  .service-features{
+    grid-template-columns:1fr;
+    gap:10px
+  }
+
+  .service-features li{
+    font-size:13px
+  }
+
+  .services-cta{
+    margin-top:30px;
+    padding:24px 20px
+  }
+
+  .services-cta-text h3{
+    font-size:16px
+  }
+
+  .services-cta-text p{
+    font-size:13px
+  }
+
+  .services-cta a{
+    width:100%
+  }
+
   .tabbed-gallery-title{
-    font-size:27px;
+    font-size:27px
   }
 
   .tab-gallery-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr
   }
 
   .tab-gallery-grid img{
-    height:230px;
+    height:230px
   }
 }
 </style>
@@ -259,18 +898,14 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
 
 <section class="edkal-hero">
 
-  <!-- COMPANY TEAM IMAGE -->
   <div class="hero-image">
     <img src="IMG-20210729-WA0013.jpg" alt="Edkal Electrical Team">
   </div>
 
-  <!-- DARK OVERLAY -->
   <div class="hero-overlay"></div>
 
-  <!-- FLOATING NAVBAR -->
   <nav class="edkal-floating-nav">
 
-    <!-- LOGO -->
     <a href="#" class="edkal-brand">
 
       <div class="brand-icon">
@@ -284,19 +919,17 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
 
     </a>
 
-    <!-- NAVIGATION -->
     <div class="edkal-links">
 
       <a href="#" class="active">Home</a>
       <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
       <a href="#">Why Us</a>
-      <a href="#">Contact</a>
+      <a href="#contact">Contact</a>
 
     </div>
 
-    <!-- ACTION BUTTONS -->
     <div class="edkal-actions">
 
       <a href="#" class="whatsapp-btn">
@@ -309,14 +942,12 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
 
     </div>
 
-    <!-- MOBILE MENU -->
-    <button class="mobile-menu" onclick="toggleMenu()"> 
+    <button class="mobile-menu" onclick="toggleMenu()">
       ☰
     </button>
 
   </nav>
 
-  <!-- HERO CONTENT -->
   <div class="hero-content">
 
     <div class="hero-label">
@@ -334,11 +965,11 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
 
     <div class="hero-buttons">
 
-      <a href="#" class="primary-btn">
+      <a href="#services" class="primary-btn">
         Our Services
       </a>
 
-      <a href="#" class="outline-btn">
+      <a href="#projects" class="outline-btn">
         View Projects
       </a>
 
@@ -347,7 +978,6 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   </div>
 
 </section>
-
 
 <style>
 
@@ -358,20 +988,20 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   overflow:hidden;
   font-family:Arial,sans-serif;
   display:flex;
-  align-items:center;
+  align-items:center
 }
 
 .hero-image{
   position:absolute;
   inset:0;
-  z-index:1;
+  z-index:1
 }
 
 .hero-image img{
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center;
+  object-position:center
 }
 
 .hero-overlay{
@@ -384,7 +1014,7 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
       rgba(0,0,0,.85) 0%,
       rgba(0,0,0,.62) 45%,
       rgba(0,0,0,.25) 100%
-    );
+    )
 }
 
 .edkal-floating-nav{
@@ -402,7 +1032,7 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   border:1px solid rgba(255,255,255,.15);
   border-radius:14px;
   box-shadow:0 15px 40px rgba(0,0,0,.35);
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px)
 }
 
 .edkal-brand{
@@ -411,7 +1041,7 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   gap:10px;
   text-decoration:none;
   color:white;
-  flex-shrink:0;
+  flex-shrink:0
 }
 
 .brand-icon{
@@ -423,27 +1053,27 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   color:#111;
   border-radius:9px;
   font-size:25px;
-  font-weight:bold;
+  font-weight:bold
 }
 
 .brand-name strong{
   display:block;
   color:white;
   font-size:20px;
-  letter-spacing:1px;
+  letter-spacing:1px
 }
 
 .brand-name small{
   display:block;
   color:#f5b400;
   font-size:8px;
-  letter-spacing:2px;
+  letter-spacing:2px
 }
 
 .edkal-links{
   display:flex;
   align-items:center;
-  gap:24px;
+  gap:24px
 }
 
 .edkal-links a{
@@ -453,12 +1083,12 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   font-size:14px;
   font-weight:600;
   padding:8px 0;
-  transition:.3s;
+  transition:.3s
 }
 
 .edkal-links a:hover,
 .edkal-links a.active{
-  color:#f5b400;
+  color:#f5b400
 }
 
 .edkal-links a::after{
@@ -469,18 +1099,18 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   width:0;
   height:2px;
   background:#f5b400;
-  transition:.3s;
+  transition:.3s
 }
 
 .edkal-links a:hover::after,
 .edkal-links a.active::after{
-  width:100%;
+  width:100%
 }
 
 .edkal-actions{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:8px
 }
 
 .whatsapp-btn{
@@ -489,12 +1119,12 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   padding:10px 14px;
   border:1px solid #f5b400;
   border-radius:6px;
-  font-size:13px;
+  font-size:13px
 }
 
 .whatsapp-btn:hover{
   background:#f5b400;
-  color:#111;
+  color:#111
 }
 
 .quote-btn{
@@ -504,11 +1134,11 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   padding:11px 17px;
   border-radius:6px;
   font-size:13px;
-  font-weight:bold;
+  font-weight:bold
 }
 
 .quote-btn:hover{
-  background:#ffd43b;
+  background:#ffd43b
 }
 
 .hero-content{
@@ -518,7 +1148,7 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   max-width:1200px;
   margin:auto;
   padding:130px 7% 60px;
-  color:white;
+  color:white
 }
 
 .hero-label{
@@ -530,7 +1160,7 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   border-radius:4px;
   font-size:11px;
   font-weight:bold;
-  letter-spacing:1px;
+  letter-spacing:1px
 }
 
 .hero-content h1{
@@ -538,12 +1168,12 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   margin:0;
   font-size:clamp(42px,6vw,72px);
   line-height:1.05;
-  font-weight:800;
+  font-weight:800
 }
 
 .hero-content h1 span{
   display:block;
-  color:#f5b400;
+  color:#f5b400
 }
 
 .hero-content p{
@@ -551,13 +1181,13 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   margin:22px 0;
   color:#eee;
   font-size:17px;
-  line-height:1.7;
+  line-height:1.7
 }
 
 .hero-buttons{
   display:flex;
   gap:12px;
-  margin-top:25px;
+  margin-top:25px
 }
 
 .primary-btn{
@@ -566,7 +1196,7 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   text-decoration:none;
   padding:13px 22px;
   border-radius:6px;
-  font-weight:bold;
+  font-weight:bold
 }
 
 .outline-btn{
@@ -575,12 +1205,12 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   padding:12px 22px;
   border:1px solid white;
   border-radius:6px;
-  font-weight:bold;
+  font-weight:bold
 }
 
 .outline-btn:hover{
   background:white;
-  color:#111;
+  color:#111
 }
 
 .mobile-menu{
@@ -592,26 +1222,28 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
   background:#f5b400;
   color:#111;
   font-size:22px;
-  cursor:pointer;
+  cursor:pointer
 }
 
 @media(max-width:1050px){
+
   .edkal-links{
-    gap:15px;
+    gap:15px
   }
 
   .edkal-links a{
-    font-size:13px;
+    font-size:13px
   }
 
   .whatsapp-btn{
-    display:none;
+    display:none
   }
 }
 
 @media(max-width:800px){
+
   .edkal-hero{
-    min-height:650px;
+    min-height:650px
   }
 
   .edkal-floating-nav{
@@ -619,11 +1251,11 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
     left:15px;
     right:15px;
     flex-wrap:wrap;
-    padding:10px;
+    padding:10px
   }
 
   .mobile-menu{
-    display:block;
+    display:block
   }
 
   .edkal-links{
@@ -634,76 +1266,76 @@ footer{background:var(--dark);color:#fff;text-align:center;padding:22px}
     gap:0;
     margin-top:10px;
     padding-top:10px;
-    border-top:1px solid #333;
+    border-top:1px solid #333
   }
 
   .edkal-links.show{
-    display:flex;
+    display:flex
   }
 
   .edkal-links a{
-    padding:13px 5px;
+    padding:13px 5px
   }
 
   .edkal-actions{
-    display:none;
+    display:none
   }
 
   .hero-content{
-    padding:150px 25px 50px;
+    padding:150px 25px 50px
   }
 
   .hero-content h1{
-    font-size:43px;
+    font-size:43px
   }
 
   .hero-content p{
-    font-size:15px;
+    font-size:15px
   }
 }
 
 @media(max-width:500px){
+
   .edkal-hero{
-    min-height:620px;
+    min-height:620px
   }
 
   .brand-icon{
     width:40px;
     height:40px;
-    font-size:20px;
+    font-size:20px
   }
 
   .brand-name strong{
-    font-size:17px;
+    font-size:17px
   }
 
   .brand-name small{
-    font-size:7px;
+    font-size:7px
   }
 
   .hero-content{
     padding-left:20px;
-    padding-right:20px;
+    padding-right:20px
   }
 
   .hero-content h1{
-    font-size:37px;
+    font-size:37px
   }
 
   .hero-buttons{
     flex-direction:column;
-    align-items:flex-start;
+    align-items:flex-start
   }
 
   .primary-btn,
   .outline-btn{
     width:100%;
-    text-align:center;
+    text-align:center
   }
 }
 
 </style>
-
 
 <script>
 function toggleMenu(){
@@ -728,31 +1360,31 @@ function toggleMenu(){
   backdrop-filter:blur(12px);
   border:1px solid #ffffff25;
   border-radius:12px;
-  font-family:Arial,sans-serif;
+  font-family:Arial,sans-serif
 }
 
 .logo7{
   color:white;
   font-weight:bold;
-  font-size:19px;
+  font-size:19px
 }
 
 .logo7:first-letter{
-  color:#f4b400;
+  color:#f4b400
 }
 
 .links7{
   display:flex;
-  gap:25px;
+  gap:25px
 }
 
 .links7 a{
   color:#fff;
-  text-decoration:none;
+  text-decoration:none
 }
 
 .links7 a:hover{
-  color:#f4b400;
+  color:#f4b400
 }
 
 .quote7{
@@ -761,7 +1393,7 @@ function toggleMenu(){
   text-decoration:none;
   padding:10px 18px;
   border-radius:5px;
-  font-weight:bold;
+  font-weight:bold
 }
 </style>
 
@@ -792,9 +1424,7 @@ function toggleMenu(){
 </section>
 
 
-<!-- =====================================================
-     FIXED TABBED GALLERY
-====================================================== -->
+<!-- TABBED GALLERY -->
 
 <section class="tabbed-gallery" id="projects">
 
@@ -810,163 +1440,127 @@ function toggleMenu(){
 
     <div class="tabs">
 
-      <button
-        type="button"
-        class="tab-btn active"
-        data-tab="tab-installation">
+      <button type="button"
+              class="tab-btn active"
+              data-tab="tab-installation">
         Electrical Installation
       </button>
 
-      <button
-        type="button"
-        class="tab-btn"
-        data-tab="tab-maintenance">
+      <button type="button"
+              class="tab-btn"
+              data-tab="tab-maintenance">
         Maintenance
       </button>
 
-      <button
-        type="button"
-        class="tab-btn"
-        data-tab="tab-industrial">
+      <button type="button"
+              class="tab-btn"
+              data-tab="tab-industrial">
         Industrial
       </button>
 
-      <button
-        type="button"
-        class="tab-btn"
-        data-tab="tab-equipment">
+      <button type="button"
+              class="tab-btn"
+              data-tab="tab-equipment">
         Equipment
       </button>
 
     </div>
 
 
-    <!-- TAB 1 -->
-
-    <div
-      class="tab-content active"
-      id="tab-installation">
+    <div class="tab-content active" id="tab-installation">
 
       <div class="tab-gallery-grid">
 
-        <img
-          src="TTX.png"
-          alt="Electrical Installation Project"
-          class="gallery-tab-image">
+        <img src="TTX.png"
+             alt="Electrical Installation Project"
+             class="gallery-tab-image">
 
-        <img
-          src="IMG-20210729-WA0013.jpg"
-          alt="Electrical Installation Team"
-          class="gallery-tab-image">
+        <img src="IMG-20210729-WA0013.jpg"
+             alt="Electrical Installation Team"
+             class="gallery-tab-image">
 
-        <img
-          src="TTX.png"
-          alt="Electrical Installation Work"
-          class="gallery-tab-image">
+        <img src="TTX.png"
+             alt="Electrical Installation Work"
+             class="gallery-tab-image">
 
-        <img
-          src="IMG-20210729-WA0013.jpg"
-          alt="Electrical Installation Project"
-          class="gallery-tab-image">
+        <img src="IMG-20210729-WA0013.jpg"
+             alt="Electrical Installation Project"
+             class="gallery-tab-image">
 
       </div>
 
     </div>
 
 
-    <!-- TAB 2 -->
-
-    <div
-      class="tab-content"
-      id="tab-maintenance">
+    <div class="tab-content" id="tab-maintenance">
 
       <div class="tab-gallery-grid">
 
-        <img
-          src="IMG-20210729-WA0013.jpg"
-          alt="Electrical Maintenance Project"
-          class="gallery-tab-image">
+        <img src="IMG-20210729-WA0013.jpg"
+             alt="Electrical Maintenance Project"
+             class="gallery-tab-image">
 
-        <img
-          src="TTX.png"
-          alt="Electrical Maintenance Work"
-          class="gallery-tab-image">
+        <img src="TTX.png"
+             alt="Electrical Maintenance Work"
+             class="gallery-tab-image">
 
-        <img
-          src="IMG-20210729-WA0013.jpg"
-          alt="Electrical Maintenance Service"
-          class="gallery-tab-image">
+        <img src="IMG-20210729-WA0013.jpg"
+             alt="Electrical Maintenance Service"
+             class="gallery-tab-image">
 
-        <img
-          src="TTX.png"
-          alt="Electrical Maintenance Project"
-          class="gallery-tab-image">
+        <img src="TTX.png"
+             alt="Electrical Maintenance Project"
+             class="gallery-tab-image">
 
       </div>
 
     </div>
 
 
-    <!-- TAB 3 -->
-
-    <div
-      class="tab-content"
-      id="tab-industrial">
+    <div class="tab-content" id="tab-industrial">
 
       <div class="tab-gallery-grid">
 
-        <img
-          src="TTX.png"
-          alt="Industrial Electrical Project"
-          class="gallery-tab-image">
+        <img src="TTX.png"
+             alt="Industrial Electrical Project"
+             class="gallery-tab-image">
 
-        <img
-          src="IMG-20210729-WA0013.jpg"
-          alt="Industrial Electrical Work"
-          class="gallery-tab-image">
+        <img src="IMG-20210729-WA0013.jpg"
+             alt="Industrial Electrical Work"
+             class="gallery-tab-image">
 
-        <img
-          src="TTX.png"
-          alt="Industrial Electrical Installation"
-          class="gallery-tab-image">
+        <img src="TTX.png"
+             alt="Industrial Electrical Installation"
+             class="gallery-tab-image">
 
-        <img
-          src="IMG-20210729-WA0013.jpg"
-          alt="Industrial Electrical Project"
-          class="gallery-tab-image">
+        <img src="IMG-20210729-WA0013.jpg"
+             alt="Industrial Electrical Project"
+             class="gallery-tab-image">
 
       </div>
 
     </div>
 
 
-    <!-- TAB 4 -->
-
-    <div
-      class="tab-content"
-      id="tab-equipment">
+    <div class="tab-content" id="tab-equipment">
 
       <div class="tab-gallery-grid">
 
-        <img
-          src="IMG-20210729-WA0013.jpg"
-          alt="Electrical Equipment Project"
-          class="gallery-tab-image">
+        <img src="IMG-20210729-WA0013.jpg"
+             alt="Electrical Equipment Project"
+             class="gallery-tab-image">
 
-        <img
-          src="TTX.png"
-          alt="Electrical Equipment Installation"
-          class="gallery-tab-image">
+        <img src="TTX.png"
+             alt="Electrical Equipment Installation"
+             class="gallery-tab-image">
 
-        <img
-          src="IMG-20210729-WA0013.jpg"
-          alt="Electrical Equipment Service"
-          class="gallery-tab-image">
+        <img src="IMG-20210729-WA0013.jpg"
+             alt="Electrical Equipment Service"
+             class="gallery-tab-image">
 
-        <img
-          src="TTX.png"
-          alt="Electrical Equipment Project"
-          class="gallery-tab-image">
+        <img src="TTX.png"
+             alt="Electrical Equipment Project"
+             class="gallery-tab-image">
 
       </div>
 
@@ -977,9 +1571,7 @@ function toggleMenu(){
 </section>
 
 
-<!-- =====================================================
-     WHY CHOOSE US
-====================================================== -->
+<!-- WHY CHOOSE US -->
 
 <section class="why-choose-us">
 
@@ -1026,9 +1618,7 @@ function toggleMenu(){
 </section>
 
 
-<!-- =====================================================
-     SERVICES
-====================================================== -->
+<!-- OUR SERVICES -->
 
 <section class="services-section" id="services">
 
@@ -1049,19 +1639,24 @@ function toggleMenu(){
 
     </div>
 
+
     <div class="services-list">
 
       <div class="service-item active">
 
         <button class="service-header" type="button">
 
-          <span class="service-number">01</span>
+          <span class="service-number">
+            01
+          </span>
 
           <span class="service-name">
             Electrical Installation
           </span>
 
-          <span class="service-toggle">+</span>
+          <span class="service-toggle">
+            +
+          </span>
 
         </button>
 
@@ -1106,13 +1701,17 @@ function toggleMenu(){
 
         <button class="service-header" type="button">
 
-          <span class="service-number">02</span>
+          <span class="service-number">
+            02
+          </span>
 
           <span class="service-name">
             Electrical Maintenance
           </span>
 
-          <span class="service-toggle">+</span>
+          <span class="service-toggle">
+            +
+          </span>
 
         </button>
 
@@ -1154,13 +1753,17 @@ function toggleMenu(){
 
         <button class="service-header" type="button">
 
-          <span class="service-number">03</span>
+          <span class="service-number">
+            03
+          </span>
 
           <span class="service-name">
             Fault Finding & Repairs
           </span>
 
-          <span class="service-toggle">+</span>
+          <span class="service-toggle">
+            +
+          </span>
 
         </button>
 
@@ -1202,13 +1805,17 @@ function toggleMenu(){
 
         <button class="service-header" type="button">
 
-          <span class="service-number">04</span>
+          <span class="service-number">
+            04
+          </span>
 
           <span class="service-name">
             Lighting Solutions
           </span>
 
-          <span class="service-toggle">+</span>
+          <span class="service-toggle">
+            +
+          </span>
 
         </button>
 
@@ -1251,13 +1858,17 @@ function toggleMenu(){
 
         <button class="service-header" type="button">
 
-          <span class="service-number">05</span>
+          <span class="service-number">
+            05
+          </span>
 
           <span class="service-name">
             Electrical Inspection
           </span>
 
-          <span class="service-toggle">+</span>
+          <span class="service-toggle">
+            +
+          </span>
 
         </button>
 
@@ -1299,13 +1910,17 @@ function toggleMenu(){
 
         <button class="service-header" type="button">
 
-          <span class="service-number">06</span>
+          <span class="service-number">
+            06
+          </span>
 
           <span class="service-name">
             Power & Distribution
           </span>
 
-          <span class="service-toggle">+</span>
+          <span class="service-toggle">
+            +
+          </span>
 
         </button>
 
@@ -1341,6 +1956,27 @@ function toggleMenu(){
         </div>
 
       </div>
+
+    </div>
+
+
+    <div class="services-cta">
+
+      <div class="services-cta-text">
+
+        <h3>
+          Need an electrical srgolution?
+        </h3>
+
+        <p>
+          Speak with our team about your next project.
+        </p>
+
+      </div>
+
+      <a href="#contact">
+        Request a Quote
+      </a>
 
     </div>
 
@@ -1391,15 +2027,6 @@ function toggleMenu(){
 </section>
 
 
-<!-- FOOTER -->
-
-<footer>
-  <p>
-    © 2026 Edkal Electrical Services. All Rights Reserved.
-  </p>
-</footer>
-
-
 <!-- LIGHTBOX -->
 
 <div class="lightbox" id="lightbox">
@@ -1419,22 +2046,27 @@ function toggleMenu(){
 </div>
 
 
-<!-- =====================================================
-     TABBED GALLERY JAVASCRIPT
-====================================================== -->
+<footer>
+  <p>
+    © 2026 Edkal Electrical Services. All Rights Reserved.
+  </p>
+</footer>
+
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
+/* TABBED GALLERY */
 
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const tabContents = document.querySelectorAll(".tab-content");
+document.addEventListener("DOMContentLoaded",function(){
+
+  const tabButtons=document.querySelectorAll(".tab-btn");
+  const tabContents=document.querySelectorAll(".tab-content");
 
   tabButtons.forEach(function(button){
 
-    button.addEventListener("click", function(){
+    button.addEventListener("click",function(){
 
-      const target = button.getAttribute("data-tab");
+      const target=button.getAttribute("data-tab");
 
       tabButtons.forEach(function(btn){
         btn.classList.remove("active");
@@ -1446,7 +2078,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
       button.classList.add("active");
 
-      const targetContent = document.getElementById(target);
+      const targetContent=document.getElementById(target);
 
       if(targetContent){
         targetContent.classList.add("active");
@@ -1457,27 +2089,19 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
 
-  /* TAB GALLERY LIGHTBOX */
+  /* GALLERY LIGHTBOX */
 
-  const galleryImages =
-    document.querySelectorAll(".gallery-tab-image");
-
-  const lightbox =
-    document.getElementById("lightbox");
-
-  const lightboxImage =
-    document.getElementById("lightboxImage");
-
-  const lightboxClose =
-    document.getElementById("lightboxClose");
-
+  const galleryImages=document.querySelectorAll(".gallery-tab-image");
+  const lightbox=document.getElementById("lightbox");
+  const lightboxImage=document.getElementById("lightboxImage");
+  const lightboxClose=document.getElementById("lightboxClose");
 
   galleryImages.forEach(function(image){
 
-    image.addEventListener("click", function(){
+    image.addEventListener("click",function(){
 
-      lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt;
+      lightboxImage.src=image.src;
+      lightboxImage.alt=image.alt;
 
       lightbox.classList.add("open");
 
@@ -1485,66 +2109,53 @@ document.addEventListener("DOMContentLoaded", function(){
 
   });
 
-
-  function closeLightbox(){
+  lightboxClose.addEventListener("click",function(){
 
     lightbox.classList.remove("open");
-    lightboxImage.src = "";
+    lightboxImage.src="";
 
-  }
+  });
 
+  lightbox.addEventListener("click",function(event){
 
-  lightboxClose.addEventListener(
-    "click",
-    closeLightbox
-  );
+    if(event.target===lightbox){
 
-
-  lightbox.addEventListener(
-    "click",
-    function(event){
-
-      if(event.target === lightbox){
-        closeLightbox();
-      }
+      lightbox.classList.remove("open");
+      lightboxImage.src="";
 
     }
-  );
 
+  });
 
-  document.addEventListener(
-    "keydown",
-    function(event){
+  document.addEventListener("keydown",function(event){
 
-      if(event.key === "Escape"){
-        closeLightbox();
-      }
+    if(event.key==="Escape"){
+
+      lightbox.classList.remove("open");
+      lightboxImage.src="";
 
     }
-  );
+
+  });
 
 
-  /* SERVICES ACCORDION */
+  /* OUR SERVICES ACCORDION */
 
-  const serviceHeaders =
-    document.querySelectorAll(".service-header");
+  const serviceHeaders=document.querySelectorAll(".service-header");
 
   serviceHeaders.forEach(function(header){
 
-    header.addEventListener("click", function(){
+    header.addEventListener("click",function(){
 
-      const item =
-        header.closest(".service-item");
+      const item=header.closest(".service-item");
 
-      document
-        .querySelectorAll(".service-item")
-        .forEach(function(service){
+      document.querySelectorAll(".service-item").forEach(function(service){
 
-          if(service !== item){
-            service.classList.remove("active");
-          }
+        if(service!==item){
+          service.classList.remove("active");
+        }
 
-        });
+      });
 
       item.classList.toggle("active");
 
@@ -1559,4 +2170,4 @@ document.addEventListener("DOMContentLoaded", function(){
 </main>
 
 </body>
-                           </html>
+  </html>
