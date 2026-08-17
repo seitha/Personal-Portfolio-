@@ -2027,7 +2027,231 @@ function toggleMenu() {
     </div>
 
 </section>
+   <style>
+   /* =================================
+   GALLERY SECTION
+================================= */
 
+.gallery-section {
+    width: 100%;
+    padding: 90px 20px;
+    background: #ffffff;
+}
+
+.gallery-header {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.gallery-header span {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    color: #eab400;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.gallery-header h2 {
+    margin: 0;
+
+    color: #11161a;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+}
+
+.gallery-header p {
+    margin-top: 15px;
+
+    color: #697078;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   TABS
+================================= */
+
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 40px;
+}
+
+.gallery-tab {
+    padding: 12px 22px;
+
+    border: 1px solid #dedede;
+
+    background: transparent;
+
+    color: #343a40;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.gallery-tab:hover {
+    border-color: #f2bd00;
+    color: #11161a;
+
+    transform: translateY(-2px);
+}
+
+
+/* Active */
+
+.gallery-tab.active {
+    background: #f2bd00;
+    border-color: #f2bd00;
+
+    color: #11161a;
+}
+
+
+/* =================================
+   GALLERY GRID
+================================= */
+
+.gallery-grid {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =================================
+   GALLERY ITEM
+================================= */
+
+.gallery-item {
+    position: relative;
+
+    width: 100%;
+    height: 280px;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* Image hover */
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =================================
+   HIDDEN ITEMS
+================================= */
+
+.gallery-item.hidden {
+    display: none;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 850px) {
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 550px) {
+
+    .gallery-section {
+        padding: 65px 15px;
+    }
+
+    .gallery-tabs {
+        gap: 7px;
+    }
+
+    .gallery-tab {
+        padding: 10px 15px;
+
+        font-size: 12px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 240px;
+    }
+
+}
+</style>
 
 
 <script>
