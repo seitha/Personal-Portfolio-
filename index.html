@@ -1996,482 +1996,542 @@ function toggleMenu() {
     });
 
 </script>
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Edkal Electrical - Gallery</title>
-
-    <style>
-
-        /* =========================
-           RESET
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-            color: #111111;
-        }
-
-        /* =========================
-           GALLERY SECTION
-        ========================= */
-
-        .gallery-section {
-            width: 100%;
-            padding: 80px 20px;
-        }
-
-        .gallery-container {
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        .gallery-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .gallery-title small {
-            display: block;
-
-            margin-bottom: 10px;
-
-            color: #e5ad00;
-
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .gallery-title h2 {
-            font-size: 42px;
-            margin-bottom: 12px;
-        }
-
-        .gallery-title p {
-            max-width: 600px;
-            margin: auto;
-
-            color: #666666;
-
-            line-height: 1.6;
-        }
-
-        /* =========================
-           TABS
-        ========================= */
-
-        .gallery-tabs {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            gap: 10px;
-
-            margin-bottom: 35px;
-        }
-
-        .tab-button {
-            padding: 12px 24px;
-
-            border: 1px solid #dddddd;
-
-            background: #ffffff;
-
-            color: #222222;
-
-            font-size: 14px;
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-        }
-
-        .tab-button:hover {
-            border-color: #f2bd00;
-        }
-
-        .tab-button.active {
-            background: #f2bd00;
-
-            border-color: #f2bd00;
-
-            color: #111111;
-        }
-
-        /* =========================
-           GALLERY GRID
-        ========================= */
-
-        .gallery-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        /* =========================
-           GALLERY IMAGE
-        ========================= */
-
-        .gallery-image {
-            position: relative;
-
-            height: 280px;
-
-            overflow: hidden;
-
-            background: #eeeeee;
-
-            cursor: pointer;
-
-            animation: showImage 0.4s ease;
-        }
-
-        .gallery-image img {
-            width: 100%;
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-
-            transition: transform 0.4s ease;
-        }
-
-        .gallery-image:hover img {
-            transform: scale(1.08);
-        }
-
-        /* =========================
-           HIDE IMAGE
-        ========================= */
-
-        .gallery-image.hide {
-            display: none;
-        }
-
-        /* =========================
-           ANIMATION
-        ========================= */
-
-        @keyframes showImage {
-
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            .gallery-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-        }
-
-        @media (max-width: 550px) {
-
-            .gallery-section {
-                padding: 60px 15px;
-            }
-
-            .gallery-title h2 {
-                font-size: 32px;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-image {
-                height: 250px;
-            }
-
-            .tab-button {
-                padding: 10px 16px;
-                font-size: 13px;
-            }
-
-        }
-
-    </style>
-</head>
-
-<body>
-
-<section class="gallery-section">
-
-    <div class="gallery-container">
-
-        <!-- HEADER -->
-
-        <div class="gallery-title">
-
-            <small>Our Work</small>
-
-            <h2>Project Gallery</h2>
-
-            <p>
-                Explore our electrical installation,
-                maintenance, lighting and repair projects.
-            </p>
-
-        </div>
-
-        <!-- =========================
-             TABS
-        ========================= -->
-
-        <div class="gallery-tabs">
-
-            <button
-                class="tab-button active"
-                data-filter="all">
-
-                All
-
-            </button>
-
-            <button
-                class="tab-button"
-                data-filter="installation">
-
-                Installation
-
-            </button>
-
-            <button
-                class="tab-button"
-                data-filter="maintenance">
-
-                Maintenance
-
-            </button>
-
-            <button
-                class="tab-button"
-                data-filter="lighting">
-
-                Lighting
-
-            </button>
-
-            <button
-                class="tab-button"
-                data-filter="repairs">
-
-                Repairs
-
-            </button>
-
-        </div>
-
-        <!-- =========================
-             GALLERY
-        ========================= -->
-
-        <div class="gallery-grid">
-
-            <!-- INSTALLATION -->
-
-            <div
-                class="gallery-image"
-                data-category="installation">
-
-                <img
-                    src="sol.jpg"
-                    alt="Electrical installation">
-
-            </div>
-           <div 
-              <img
-                    src="sol1.jpg"
-                    alt="Electrical installation">
-
-            </div> 
-           <div
-
-
- </div>
-            <!-- MAINTENANCE -->
-
-            <div
-                class="gallery-image"
-                data-category="maintenance">
-
-                <img
-                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80"
-                    alt="Electrical maintenance">
-
-            </div>
-
-            <!-- LIGHTING -->
-
-            <div
-                class="gallery-image"
-                data-category="lighting">
-
-                <img
-                    src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=900&q=80"
-                    alt="Lighting installation">
-
-            </div>
-
-            <!-- REPAIRS -->
-
-            <div
-                class="gallery-image"
-                data-category="repairs">
-
-                <img
-                    src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=900&q=80"
-                    alt="Electrical repair">
-
-            </div>
-
-            <!-- INSTALLATION -->
-
-            <div
-                class="gallery-image"
-                data-category="installation">
-
-                <img
-                    src="sol4"
-                data-category="maintenance">
-
-                <img
-                    src="https://images.unsplash.com/photo-1581092919535-7146ff1a590e?auto=format&fit=crop&w=900&q=80"
-                    alt="Electrical maintenance work">
-
-            </div>
-
-            <!-- LIGHTING -->
-
-            <div
-                class="gallery-image"
-                data-category="lighting">
-
-                <img
-                    src="https://images.unsplash.com/photo-1493229042586-5c9e9e4a5a0a?auto=format&fit=crop&w=900&q=80"
-                    alt="Lighting project">
-
-            </div>
-
-            <!-- REPAIRS -->
-
-            <div
-                class="gallery-image"
-                data-category="repairs">
-
-                <img
-                    src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80"
-                    alt="Electrical repair project">
-
-            </div>
-
-        </div>
-
+   <!-- ================= PROJECTS SECTION ================= -->
+<section class="projects-section" id="projects">
+
+  <div class="projects-header">
+    <span class="projects-label">OUR WORK</span>
+    <h2>Projects We've Completed</h2>
+    <p>
+      A selection of electrical installations, repairs, maintenance
+      and equipment projects completed by Edkal Electrical Services.
+    </p>
+  </div>
+
+  <!-- PROJECT TABS -->
+  <div class="project-tabs">
+    <button class="project-tab active" onclick="showProjects('electrical', this)">
+      Electrical
+    </button>
+
+    <button class="project-tab" onclick="showProjects('generators', this)">
+      Generators
+    </button>
+
+    <button class="project-tab" onclick="showProjects('motors', this)">
+      Motors & Pumps
+    </button>
+
+    <button class="project-tab" onclick="showProjects('equipment', this)">
+      Equipment
+    </button>
+  </div>
+
+
+  <!-- ================= ELECTRICAL ================= -->
+  <div class="project-gallery active-gallery" id="electrical">
+
+    <div class="project-card">
+      <img src="images/projects/electrical-1.jpg" alt="Electrical installation project">
+      <div class="project-overlay">
+        <span>Electrical Installation</span>
+      </div>
     </div>
+
+    <div class="project-card">
+      <img src="images/projects/electrical-2.jpg" alt="Electrical wiring project">
+      <div class="project-overlay">
+        <span>Electrical Wiring</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/electrical-3.jpg" alt="Electrical maintenance project">
+      <div class="project-overlay">
+        <span>Maintenance</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/electrical-4.jpg" alt="Industrial electrical project">
+      <div class="project-overlay">
+        <span>Industrial Electrical</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/electrical-5.jpg" alt="Electrical repair project">
+      <div class="project-overlay">
+        <span>Electrical Repair</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/electrical-6.jpg" alt="Electrical installation">
+      <div class="project-overlay">
+        <span>Installation</span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ================= GENERATORS ================= -->
+  <div class="project-gallery" id="generators">
+
+    <div class="project-card">
+      <img src="images/projects/generator-1.jpg" alt="Generator installation">
+      <div class="project-overlay">
+        <span>Generator Installation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/generator-2.jpg" alt="Generator repair">
+      <div class="project-overlay">
+        <span>Generator Repair</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/generator-3.jpg" alt="Generator maintenance">
+      <div class="project-overlay">
+        <span>Generator Maintenance</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/generator-4.jpg" alt="Industrial generator">
+      <div class="project-overlay">
+        <span>Industrial Generator</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/generator-5.jpg" alt="Generator servicing">
+      <div class="project-overlay">
+        <span>Generator Servicing</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/generator-6.jpg" alt="Generator project">
+      <div class="project-overlay">
+        <span>Generator Project</span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ================= MOTORS & PUMPS ================= -->
+  <div class="project-gallery" id="motors">
+
+    <div class="project-card">
+      <img src="images/projects/motor-1.jpg" alt="Electric motor repair">
+      <div class="project-overlay">
+        <span>Motor Repair</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/motor-2.jpg" alt="Electric motor rewinding">
+      <div class="project-overlay">
+        <span>Motor Rewinding</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/pump-1.jpg" alt="Water pump installation">
+      <div class="project-overlay">
+        <span>Pump Installation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/pump-2.jpg" alt="Submersible pump repair">
+      <div class="project-overlay">
+        <span>Submersible Pump</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/pump-3.jpg" alt="Booster pump">
+      <div class="project-overlay">
+        <span>Booster Pump</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/motor-3.jpg" alt="Electric motor project">
+      <div class="project-overlay">
+        <span>Motor Installation</span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ================= EQUIPMENT ================= -->
+  <div class="project-gallery" id="equipment">
+
+    <div class="project-card">
+      <img src="images/projects/equipment-1.jpg" alt="Bakery equipment repair">
+      <div class="project-overlay">
+        <span>Bakery Equipment</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/equipment-2.jpg" alt="Butchery equipment">
+      <div class="project-overlay">
+        <span>Butchery Equipment</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/equipment-3.jpg" alt="Cold room installation">
+      <div class="project-overlay">
+        <span>Cold Room</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/equipment-4.jpg" alt="Cold room repair">
+      <div class="project-overlay">
+        <span>Cold Room Repair</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/equipment-5.jpg" alt="Electrical equipment">
+      <div class="project-overlay">
+        <span>Equipment Repair</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/projects/equipment-6.jpg" alt="Industrial equipment">
+      <div class="project-overlay">
+        <span>Industrial Equipment</span>
+      </div>
+    </div>
+
+  </div>
 
 </section>
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="project-lightbox" id="projectLightbox">
+  <button class="lightbox-close" onclick="closeProjectLightbox()">×</button>
+  <img id="lightboxImage" src="" alt="Project preview">
+</div>
+
+
+<style>
+
+/* ================= PROJECT SECTION ================= */
+
+.projects-section {
+  padding: 70px 7%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.projects-header {
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+
+.projects-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #f4b400;
+  margin-bottom: 8px;
+}
+
+.projects-header h2 {
+  margin: 0 0 12px;
+  font-size: 34px;
+  color: #111;
+}
+
+.projects-header p {
+  margin: 0;
+  color: #666;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+
+/* ================= TABS ================= */
+
+.project-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 15px;
+}
+
+.project-tab {
+  border: none;
+  background: #f5f5f5;
+  color: #444;
+  padding: 11px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.project-tab:hover {
+  background: #ffd633;
+  color: #111;
+}
+
+.project-tab.active {
+  background: #f4b400;
+  color: #111;
+}
+
+
+/* ================= GALLERY ================= */
+
+.project-gallery {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.project-gallery.active-gallery {
+  display: grid;
+}
+
+
+/* ================= PROJECT CARD ================= */
+
+.project-card {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #eee;
+  cursor: pointer;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.06);
+}
+
+
+/* ================= IMAGE OVERLAY ================= */
+
+.project-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 35px 15px 14px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,0)
+  );
+
+  color: white;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* ================= LIGHTBOX ================= */
+
+.project-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.88);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+  padding: 30px;
+}
+
+.project-lightbox.show {
+  display: flex;
+}
+
+.project-lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  border: none;
+  background: transparent;
+  color: white;
+
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+  .project-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-card {
+    height: 180px;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .projects-section {
+    padding: 50px 5%;
+  }
+
+  .projects-header h2 {
+    font-size: 27px;
+  }
+
+  .project-tabs {
+    gap: 7px;
+  }
+
+  .project-tab {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .project-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .project-card {
+    height: 135px;
+    border-radius: 5px;
+  }
+
+  .project-overlay {
+    opacity: 1;
+    padding: 25px 8px 8px;
+  }
+
+  .project-overlay span {
+    font-size: 10px;
+  }
+
+}
+
+</style>
+
 
 <script>
 
-    /* Get all buttons */
+/* ================= TAB SWITCHING ================= */
 
-    const buttons =
-        document.querySelectorAll(".tab-button");
+function showProjects(category, button) {
 
-    /* Get all gallery images */
+  // Hide all galleries
+  document.querySelectorAll('.project-gallery').forEach(function(gallery) {
+    gallery.classList.remove('active-gallery');
+  });
 
-    const images =
-        document.querySelectorAll(".gallery-image");
+  // Remove active state from tabs
+  document.querySelectorAll('.project-tab').forEach(function(tab) {
+    tab.classList.remove('active');
+  });
 
-    /* Listen for button clicks */
+  // Show selected gallery
+  document.getElementById(category).classList.add('active-gallery');
 
-    buttons.forEach(function(button) {
+  // Activate selected tab
+  button.classList.add('active');
+}
 
-        button.addEventListener("click", function() {
 
-            /* Get selected category */
+/* ================= LIGHTBOX ================= */
 
-            const filter =
-                button.getAttribute("data-filter");
+document.querySelectorAll('.project-card img').forEach(function(image) {
 
-            /* Change active button */
+  image.addEventListener('click', function() {
 
-            buttons.forEach(function(btn) {
+    document.getElementById('lightboxImage').src = this.src;
 
-                btn.classList.remove("active");
+    document
+      .getElementById('projectLightbox')
+      .classList.add('show');
 
-            });
+  });
 
-            button.classList.add("active");
+});
 
-            /* Filter gallery */
 
-            images.forEach(function(image) {
+function closeProjectLightbox() {
 
-                const category =
-                    image.getAttribute("data-category");
+  document
+    .getElementById('projectLightbox')
+    .classList.remove('show');
 
-                if (
-                    filter === "all" ||
-                    category === filter
-                ) {
+}
 
-                    image.classList.remove("hide");
 
-                }
+/* Close lightbox when clicking outside image */
 
-                else {
+document.getElementById('projectLightbox').addEventListener('click', function(e) {
 
-                    image.classList.add("hide");
+  if (e.target === this) {
+    closeProjectLightbox();
+  }
 
-                }
-
-            });
-
-        });
-
-    });
+});
 
 </script>
+
 /*------------*/
 <!-- PRODUCTS SECTION -->
 <section class="products-section" id="products">
