@@ -2480,7 +2480,201 @@ function toggleMenu() {
     });
 
 </script>
+/*------------*/
+<!-- PRODUCTS SECTION -->
+<section class="products-section" id="products">
+  <div class="products-header">
+    <div>
+      <span class="products-label">PRODUCTS</span>
+      <h2>Our Products</h2>
+    </div>
 
+    <span class="products-hint">Swipe to explore →</span>
+  </div>
+
+  <div class="products-scroll">
+
+    <!-- Product 1 -->
+    <div class="product-item">
+      <div class="product-image">
+        <img src="images/hammer-mill.jpg" alt="Hammer Mill">
+      </div>
+      <h3>Hammer Mill</h3>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-item">
+      <div class="product-image">
+        <img src="images/lawn-mower.jpg" alt="Lawn Mower">
+      </div>
+      <h3>Lawn Mower</h3>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-item">
+      <div class="product-image">
+        <img src="images/electric-motor.jpg" alt="Electric Motor">
+      </div>
+      <h3>Electric Motor</h3>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-item">
+      <div class="product-image">
+        <img src="images/water-pump.jpg" alt="Water Pump">
+      </div>
+      <h3>Water Pump</h3>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-item">
+      <div class="product-image">
+        <img src="images/generator.jpg" alt="Generator">
+      </div>
+      <h3>Generator</h3>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-item">
+      <div class="product-image">
+        <img src="images/bakery-equipment.jpg" alt="Bakery Equipment">
+      </div>
+      <h3>Bakery Equipment</h3>
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+/* ==============================
+   PRODUCTS SECTION
+   ============================== */
+
+.products-section {
+  width: 100%;
+  padding: 45px 6%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 22px;
+}
+
+.products-label {
+  display: block;
+  color: #f4b400;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.products-header h2 {
+  margin: 0;
+  color: #111;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.products-hint {
+  color: #777;
+  font-size: 12px;
+}
+
+/* Horizontal scrolling row */
+.products-scroll {
+  display: flex;
+  gap: 18px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  padding-bottom: 8px;
+
+  scrollbar-width: none;
+}
+
+.products-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Product */
+.product-item {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+}
+
+/* Image */
+.product-image {
+  width: 100%;
+  height: 145px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.35s ease;
+}
+
+/* Hover */
+.product-item:hover .product-image img {
+  transform: scale(1.04);
+}
+
+.product-item h3 {
+  margin: 10px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+}
+
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 600px) {
+
+  .products-section {
+    padding: 35px 5%;
+  }
+
+  .products-header {
+    align-items: center;
+  }
+
+  .products-header h2 {
+    font-size: 23px;
+  }
+
+  .products-hint {
+    font-size: 11px;
+  }
+
+  .product-item {
+    flex: 0 0 190px;
+  }
+
+  .product-image {
+    height: 125px;
+  }
+
+}
+</style>
+ /*  ------------*/
 </body>
 </html>
 
