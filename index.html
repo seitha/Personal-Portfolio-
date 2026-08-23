@@ -239,21 +239,40 @@ Edkal Electrical Services Is An Electrical Company Known For Generator Repairing
    HERO SECTION
 ================================= */
 
-.edkal-hero {
-
-  position:relative;
-
-  width:100%;
-  min-height:680px;
-
-  overflow:hidden;
-
-  font-family:Arial, sans-serif;
-
-  display:flex;
-  align-items:center;
-
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
 }
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: heroScroll 15s infinite;
+}
+
+@keyframes heroScroll {
+  0%, 25% {
+    transform: translateX(0);
+  }
+
+  33%, 58% {
+    transform: translateX(-100%);
+  }
+
+  66%, 91% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+    }
 
 /* =================================
    TEAM IMAGE
@@ -926,7 +945,7 @@ function toggleMenu() {
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Powering Lusaka <span>With Excellence </span></h1>
+    <h1>Powering Zambia <span>With Excellence </span></h1>
     <p>Reliable electrical installations, maintenance, and solar solutions for homes, businesses, and industries.</p>
     <a href="#contact" class="btn">Request Quote</a>
   </div>
@@ -2894,7 +2913,7 @@ document.getElementById("contactForm").addEventListener("submit", e => {
           <strong>Email</strong>
           <p>
             <a href="mailto:info@edkalelectrical.com">
-              info@edkalelectrical.com
+             EdkalelectricalService@gmail.com
             </a>
           </p>
         </div>
